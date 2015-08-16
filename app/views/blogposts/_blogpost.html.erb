@@ -6,9 +6,17 @@
 </p>
 
 <p>
-  <strong>Body:</strong>
-  <%= markdown(blogpost.body) %>
+  <strong>Date:</strong>
+  <%= blogpost.created_at %>
 </p>
+
+<article>
+    <p>
+      <strong>Body:</strong>
+      <%= markdown(blogpost.body) %>
+    </p>
+
+</article>
 
 <% if logged_in? %>
   <%= link_to 'Edit', edit_blogpost_path(blogpost) %> |

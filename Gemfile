@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.3'
 gem 'redcarpet'
 gem 'coderay'
+gem 'readmorejs-rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'will_paginate', '3.0.7'

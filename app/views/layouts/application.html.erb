@@ -4,6 +4,7 @@
   <title>MySite</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -15,9 +16,13 @@
         <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
   <%= yield %>
+  <%= render 'layouts/footer' %>
 </div>
 
-<%= render 'layouts/footer' %>
 
+<script>
+
+    $('article').readmore();
+  </script>
 </body>
 </html>

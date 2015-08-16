@@ -13,6 +13,10 @@ class StaticPagesController < ApplicationController
     
   end
   
+  def projects
+    
+  end
+  
   protected
   
     def authenticate
