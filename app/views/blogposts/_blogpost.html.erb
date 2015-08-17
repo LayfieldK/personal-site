@@ -1,22 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <h3>
   <%= blogpost.title %>
+  </h3>
 </p>
 
 <p>
-  <strong>Date:</strong>
+  <i>
   <%= blogpost.created_at %>
+  </i>
 </p>
 
 <article>
     <p>
-      <strong>Body:</strong>
+      
       <%= markdown(blogpost.body) %>
     </p>
 
 </article>
+
+<%= raw tag_links(blogpost.all_tags) %>
 
 <% if logged_in? %>
   <%= link_to 'Edit', edit_blogpost_path(blogpost) %> |

@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   get 'admin'  =>    'static_pages#admin'
   get 'about' =>    'static_pages#about'
   get 'projects' =>   'static_pages#projects'
+  get 'tags/:tag', to: 'blogposts#index', as: "tag"
 
   resources :blogposts
-  resources :tags, except: [:edit]
+  
   resources :categories
 
 end

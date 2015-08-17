@@ -7,7 +7,12 @@ class BlogpostsController < ApplicationController
   # GET /blogposts
   # GET /blogposts.json
   def index
-    @blogposts = Blogpost.paginate(page: params[:page], :per_page => 5)
+    if params[:tag]
+      @blogposts = Blogpost.tagged_with(params[:tag]).paginate(page: params[:page], :per_page => 5)
+    else
+      @blogposts = Blogpost.paginate(page: params[:page], :per_page => 5)
+    end
+
   end
 
   # GET /blogposts/1
@@ -76,7 +81,7 @@ class BlogpostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blogpost_params
-      params.require(:blogpost).permit(:title, :body)
+      params.require(:blogpost).permit(:title, :body, :all_tags)
     end
     
 
