@@ -1,14 +1,14 @@
-<aside class="col-md-4">
+<aside class="col-md-3">
       
-      
-  <h3>Tags</h3>
-    <ul>
+  <section>
+    <h1>Tags</h1>
+    
       <% tag_order Tag.counts do |tag, count| %>
         
-          <li>
-            <%= link_to tag.name, tag_path(tag.name) %> <%= count %>
-          </li>
+          
+        <div><%= link_to tag.name, tag_path(tag.name) %> <%= count %></div>
+          
         
       <% end %>
-    </ul>  
+  </section>
 </aside>
