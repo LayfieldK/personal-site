@@ -1,6 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h2>AlertBot</h2>
+    <h3><%= link_to "www.alertbot.com",   "http://www.alertbot.com" %></h3>
   </div>
   
   <div class="panel-body">
@@ -23,11 +24,13 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h2>Eve Watch</h2>
+    <h3><%= link_to "Eve Watch on Google Play",   "https://play.google.com/store/apps/details?id=net.evewatch" %></h3>
   </div>
   
   <div class="panel-body">
   <p>Eve Watch is an app on the Google Play store designed for players of the popular multiplayer game, Eve Online.  Eve Online is a game set in space, where players are pilots of ships that can fill roles such as miners, pirates, traders, or soldiers.  The game is set in a persistent universe, so the game is always running, even if you're not logged in.  Taking a note from my work on AlertBot, I decided to create an app for Eve Online players that would send them notifications when certain events occurred in-game.  Since Eve Online is a persistent universe, many important things can happen while the player is not logged in to the game.  For example, a user's personal space station could come under attack by a rival group of players.  In this case, a player could lose his (very) expensive property without ever having a chance to defend it.  Eve Watch can be configured to send an alert directly to the player's Android device when such an event occurs, giving them a chance to defend their territory.  In fact, the app can send different notifications for over 140 in-game events.</p>
   <p>The app was written in Java, and was created for two reasons.  First, I wanted to get some exposure to mobile app development and using APIs.  Second, I was a huge fan of Eve Online at the time of the app's creation, and I wanted to contribute to the community.</p>
+  <p>Source code available <%= link_to "on Github.", "https://github.com/LayfieldK/eve_watch" %></p>
   </div>
   
 </div>
@@ -41,6 +44,8 @@
     <p>Artificial intelligence, particularly in the context of video games, has always been an interest of mine.  I've often felt that for all of the excitement built up over upgrades in the graphics of games, not enough uproar is created at the lack of improvement in the AI in the majority of modern games.  One particular field of AI that I find particularly interesting is that of pathfinding.</p>
     <p>A* (pronounced A Star) is a pathfinding algorithm that is used in a variety of contexts beyond video games.  However, most of my research has been exclusive to the video game side of the algorithm.  Characters, or units, in most games use a pathfinding algorithm to move from point A to point B in a level.  If only one unit were to move at a time, there would be no problems with A* and units should be able to flawlessly make the shortest moves possible to reach their destinations.  A problem arises when multiple units move simultaneously.  If two units are ordered to move directly toward each other to a destination on the other side of the opposing unit, they will inevitably walk straight into each other and then look unintelligent while they attempt to navigate around each other.  I spent time researching a modified version of A* called Hierarchical Cooperative A* which aims to eliminate this problem by taking other units movement over time into consideration when plotting movement routes.</p>
     <p>To assist myself in visualizing the problem with A*, I created an applet in Java full of "nodes" where a unit can occupy space.  Within the applet, users can create custom pathfinding scenarios, or choose from any of 3 troublesome types of pathfinding situations.  These randomly generated, yet predefined, scenarios include a bottleneck, a random grid full of units and walls, and a setup where every unit on the map must reach their destination directly across the map from their starting points.  Also included in the applet is the ability to run massive amounts of tests with no visual element for data analysis.</p>
+    <p>Source code available <%= link_to "on Github.", "https://github.com/LayfieldK/astar_research" %></p>
+    <p>Runnable jar file available <%= link_to "here.", "files/AStarTool.jar" %></p>
   </div>
   
 </div>
@@ -48,11 +53,13 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h2>KevinLayfield.com</h2>
+    <h3><%= link_to "KevinLayfield.com",   root_path %></h3>
   </div>
   
   <div class="panel-body">
   <p>KevinLayfield.com was created in an effort to establish a place where friends, colleagues, and the computer science community can visit to learn more about the things that I find interesting.  I do not use many social networking sites, so this personal website is my outlet which allows me to put my thoughts and interests on the web and for others to view them if they wish.</p>
   <p>The site was created with the Rails framework within a development environment on Cloud 9, and it is hosted through Heroku.  I created this site after completing the Ruby On Rails Tutorial by Michael Hartl, which I greatly recommend to anyone looking to learn Rails.  I created a blogging solution within the site so that I can routinely write up articles about web development, software development, the video games industry, and personal interests.  I will continue to attempt to implement features that I want to experiment with into the site as I learn more about Ruby and Rails.</p>
+  <p>Source code available <%= link_to "on Github.", "https://github.com/LayfieldK/personal-site" %></p>
   </div>
   
 </div>

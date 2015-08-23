@@ -17,6 +17,8 @@ class StaticPagesController < ApplicationController
     
   end
   
+  
+  
   protected
   
     def authenticate
@@ -24,4 +26,6 @@ class StaticPagesController < ApplicationController
         username == USER_ID && password == PASSWORD
       end
     end
+    
+  
 end
