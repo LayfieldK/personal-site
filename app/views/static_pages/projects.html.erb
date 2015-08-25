@@ -1,7 +1,59 @@
+
+
+<!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide" src="https://s3.amazonaws.com/kevinlayfieldsite/UnrealEngine.png" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="second-slide" src="https://s3.amazonaws.com/kevinlayfieldsite/twitter.png" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="third-slide" src="https://s3.amazonaws.com/kevinlayfieldsite/github.png" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+
 <div class="panel panel-default">
   <div class="panel-heading">
     <h2>AlertBot</h2>
-    <h3><%= link_to "www.alertbot.com",   "http://www.alertbot.com" %></h3>
   </div>
   
   <div class="panel-body">
@@ -17,6 +69,7 @@
     <li>our databases which contain hundreds of tables, views, and procedures</li>
   </ul>
   <p>The AlertBot brand has been the primary concern of my professional career since graduating from college, and I am immensely proud of the product.</p>
+  <p>Visit AlertBot's home page <%= link_to "here.",   "http://www.alertbot.com" %></p>
   </div>
   
 </div>
@@ -24,12 +77,12 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h2>Eve Watch</h2>
-    <h3><%= link_to "Eve Watch on Google Play",   "https://play.google.com/store/apps/details?id=net.evewatch" %></h3>
   </div>
   
   <div class="panel-body">
   <p>Eve Watch is an app on the Google Play store designed for players of the popular multiplayer game, Eve Online.  Eve Online is a game set in space, where players are pilots of ships that can fill roles such as miners, pirates, traders, or soldiers.  The game is set in a persistent universe, so the game is always running, even if you're not logged in.  Taking a note from my work on AlertBot, I decided to create an app for Eve Online players that would send them notifications when certain events occurred in-game.  Since Eve Online is a persistent universe, many important things can happen while the player is not logged in to the game.  For example, a user's personal space station could come under attack by a rival group of players.  In this case, a player could lose his (very) expensive property without ever having a chance to defend it.  Eve Watch can be configured to send an alert directly to the player's Android device when such an event occurs, giving them a chance to defend their territory.  In fact, the app can send different notifications for over 140 in-game events.</p>
   <p>The app was written in Java, and was created for two reasons.  First, I wanted to get some exposure to mobile app development and using APIs.  Second, I was a huge fan of Eve Online at the time of the app's creation, and I wanted to contribute to the community.</p>
+  <p>View the app's page <%= link_to "on Google Play.",   "https://play.google.com/store/apps/details?id=net.evewatch" %></p>
   <p>Source code available <%= link_to "on Github.", "https://github.com/LayfieldK/eve_watch" %></p>
   </div>
   
@@ -52,12 +105,12 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h2>KevinLayfield.com</h2>
-    <h3><%= link_to "KevinLayfield.com",   root_path %></h3>
   </div>
   
   <div class="panel-body">
   <p>KevinLayfield.com was created in an effort to establish a place where friends, colleagues, and the computer science community can visit to learn more about the things that I find interesting.  I do not use many social networking sites, so this personal website is my outlet which allows me to put my thoughts and interests on the web and for others to view them if they wish.</p>
   <p>The site was created with the Rails framework within a development environment on Cloud 9, and it is hosted through Heroku.  I created this site after completing the Ruby On Rails Tutorial by Michael Hartl, which I greatly recommend to anyone looking to learn Rails.  I created a blogging solution within the site so that I can routinely write up articles about web development, software development, the video games industry, and personal interests.  I will continue to attempt to implement features that I want to experiment with into the site as I learn more about Ruby and Rails.</p>
+  <p>Visit the site <%= link_to "here.", root_path %></p>
   <p>Source code available <%= link_to "on Github.", "https://github.com/LayfieldK/personal-site" %></p>
   </div>
   

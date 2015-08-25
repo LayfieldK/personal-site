@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   before_filter :authenticate, only: [:admin]
   
   def home
-    @blogposts = Blogpost.all.paginate(page: params[:page])
+    @blogposts = Blogpost.all.paginate(page: params[:page], :per_page => 5)
   end
   
   def admin

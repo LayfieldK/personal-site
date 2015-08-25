@@ -1,6 +1,8 @@
 <% if @blogposts.any? %>
-  <ol class="blogposts">
+
+
     <%= render @blogposts %>
-  </ol>
+  
   <%= will_paginate @blogposts %>
+  
 <% end %>

@@ -1,15 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="blog-post">
+  <h2 class="blog-post-title">
+    <%= blogpost.title %>
+  </h2>
 
-<p>
-  <h3>
-  <%= blogpost.title %>
-  </h3>
-</p>
 
-<p>
-  <i>
-  <%= blogpost.created_at %>
-  </i>
+<p class="blog-post-meta">
+  <%= blogpost.created_at.to_s(:long_ordinal) %>
 </p>
 
 <article>
@@ -19,6 +15,7 @@
     </p>
 
 </article>
+</div> <!-- blog-post -->
 
 <%= raw tag_links(blogpost.all_tags) %>
 
