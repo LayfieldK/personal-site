@@ -15,9 +15,10 @@
     </p>
 
 </article>
+<%= raw tag_links(blogpost.all_tags) %>
 </div> <!-- blog-post -->
 
-<%= raw tag_links(blogpost.all_tags) %>
+
 
 <% if logged_in? %>
   <%= link_to 'Edit', edit_blogpost_path(blogpost) %> |
