@@ -5,6 +5,8 @@ class Tag < ActiveRecord::Base
 
   
   def self.counts
-    self.select("name, count(taggings.tag_id) as count").joins(:taggings).group("taggings.tag_id, tags.id, tags.name").order("count DESC")
+    #cut out tags that are already represented categories
+    categories = ["programming", "reviews", "interests", "misc"]
+    self.select("name, count(taggings.tag_id) as count").where("name not in (?)", categories).joins(:taggings).group("taggings.tag_id, tags.id, tags.name").order("count DESC")
   end
 end

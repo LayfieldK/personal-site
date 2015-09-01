@@ -16,12 +16,11 @@
         
         <nav>
           <ul class="nav nav-justified">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Downloads</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li class="<%= 'active' if current_page?(blogposts_path) %>"><%= link_to "All", blogposts_path %></li>
+            <li class="<%= 'active' if current_page?(tag_path("programming")) %>"><%= link_to "Programming", tag_path("programming") %></li>
+            <li class="<%= 'active' if current_page?(tag_path("reviews")) %>"><%= link_to "Reviews", tag_path("reviews") %></li>
+            <li class="<%= 'active' if current_page?(tag_path("interests")) %>"><%= link_to "Interests", tag_path("interests") %></li>
+            <li class="<%= 'active' if current_page?(tag_path("misc")) %>"><%= link_to "Misc", tag_path("misc") %></li>
           </ul>
         </nav>
       </div>

@@ -58,18 +58,18 @@
         <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
         <h2>About Me</h2>
         <p>Learn everything you could ever want to know about my life, interests, and hobbies.  </p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        <p><%= link_to  "Read More &raquo;".html_safe, about_path, :class => "btn btn-default", :role =>"button" %></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
         <h2>Blog</h2>
         <p>Read my thoughts on various topics ranging from web development to the fall of the Roman Empire and everything in between.</p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        <p><%= link_to  "Read More &raquo;".html_safe, blogposts_path, :class => "btn btn-default", :role =>"button" %></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
         <h2>Projects</h2>
         <p>View programming projects that I have spent time working on either professionally or in my spare time.</p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        <p> <%= link_to  "Read More &raquo;".html_safe, projects_path, :class => "btn btn-default", :role =>"button" %></p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
