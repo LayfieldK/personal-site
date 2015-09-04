@@ -11,7 +11,7 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="https://s3.amazonaws.com/kevinlayfieldsite/UnrealEngine.png" alt="First slide">
+          <%= image_tag("UnrealEngine.png") %>
           <div class="container">
             <div class="carousel-caption">
               <h1>AlertBot</h1>
@@ -76,20 +76,20 @@
 
     <!-- Three columns of text below the carousel -->
     <div class="row">
-      <div class="col-lg-4">
-        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <div class="col-lg-4 text-center">
+        <img class="img-circle img-responsive center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
         <h2>About Me</h2>
         <p>Learn everything you could ever want to know about my life, interests, and hobbies.  </p>
         <p><%= link_to  "Read More &raquo;".html_safe, about_path, :class => "btn btn-default", :role =>"button" %></p>
       </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <div class="col-lg-4 text-center">
+        <img class="img-circle img-responsive center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
         <h2>Blog</h2>
         <p>Read my thoughts on various topics ranging from web development to the fall of the Roman Empire and everything in between.</p>
         <p><%= link_to  "Read More &raquo;".html_safe, blogposts_path, :class => "btn btn-default", :role =>"button" %></p>
       </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <div class="col-lg-4 text-center">
+        <img class="img-circle img-responsive center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
         <h2>Projects</h2>
         <p>View programming projects that I have spent time working on either professionally or in my spare time.</p>
         <p> <%= link_to  "Read More &raquo;".html_safe, projects_path, :class => "btn btn-default", :role =>"button" %></p>
