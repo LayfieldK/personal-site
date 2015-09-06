@@ -1,24 +1,16 @@
-<div class="blog-post">
-  <h2 class="blog-post-title">
-    <%= blogpost.title %>
-  </h2>
+<div class="col-lg-12 ">
 
-
-<p class="blog-post-meta">
-  <%= blogpost.created_at.to_s(:long_ordinal) %>
-</p>
-
-<article>
-    <p>
-      
-      <%= markdown(blogpost.body) %>
-    </p>
-
-</article>
-<%= raw tag_links(blogpost.all_tags) %>
-</div> <!-- blog-post -->
-
-
+    <h2 class="text-center"><%= blogpost.title %>
+        <br>
+        <small><%= blogpost.created_at.to_s(:long_ordinal) %></small>
+    </h2>
+    <article>
+     <%= markdown(blogpost.body) %>
+    </article>
+    <hr>
+    <%= raw tag_links(blogpost.all_tags) %>
+    <hr>
+</div>
 
 <% if logged_in? %>
   <%= link_to 'Edit', edit_blogpost_path(blogpost) %> |

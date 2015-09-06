@@ -1,140 +1,128 @@
 
 
+<div class="container">
 
-<a name="AlertBot"></a>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2>AlertBot</h2>
-  </div>
-  
-  <div class="panel-body">
-  <p>AlertBot is a service used by hundreds of the world's top retailers to monitor website performance.  The service alerts users when their sites have problems which require attention, and reports many useful statistics to them in a multitude of ways.  Dozens of reports can be accessed through the service's Manager site, or they can be emailed to account users weekly.  The AlertBot brand has earned the trust of many noteworthy customers including Sony, IBM, Dell, Disney, and the United States Marines.</p>
-  <p>Since 2009, I have been the lead developer on all software, database solutions, and websites for AlertBot.  Most of the work has been accomplished with Microsoft products, including the .NET Framework and SQL Server.</p><p>Some of the projects I've worked on include, but are not limited to:</p>  
-  <ul>
-    <li>a Manager website which allows users to maintain all aspects of their accounts</li>
-    <li>the testing agent from which we monitor all of our clients' sites</li>
-    <li>a Selenium based "recorder" which allows our customers to record scripts that simulate what a typical user of their site would do on a visit to their page</li>
-    <li>a testing module that reproduces these scripts within a real web browser</li>
-    <li>a custom load balancer for our complex testing network which spans the globe</li>
-    <li>dozens of analytical reports that inform our clients on the performance of their websites</li>
-    <li>our databases which contain hundreds of tables, views, and procedures</li>
-  </ul>
-  <p>The AlertBot brand has been the primary concern of my professional career since graduating from college, and I am immensely proud of the product.</p>
-  <p>Visit AlertBot's home page <%= link_to "here.",   "http://www.alertbot.com" %></p>
-  </div>
-  
-</div>
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">My Projects
+                    </h2>
+                    <hr>
+                </div>
+                <a name="AlertBot"></a>
+                <div class="col-lg-12 ">
+                    <img class="img-responsive img-border img-full" src="img/slide-1.jpg" alt="">
+                    <h2 class="text-center">AlertBot
+                        
+                    </h2>
+                    <p>AlertBot is a service used by hundreds of the world's top retailers to monitor website performance.  The service alerts users when their sites have problems which require attention, and reports many useful statistics to them in a multitude of ways.  Dozens of reports can be accessed through the service's Manager site, or they can be emailed to account users weekly.  The AlertBot brand has earned the trust of many noteworthy customers including Sony, IBM, Dell, Disney, and the United States Marines.</p>
+                    <p>Since 2009, I have been the lead developer on all software, database solutions, and websites for AlertBot.  Most of the work has been accomplished with Microsoft products, including the .NET Framework and SQL Server.</p><p>Some of the projects I've worked on include, but are not limited to:</p>  
+                    <ul>
+                      <li>a Manager website which allows users to maintain all aspects of their accounts</li>
+                      <li>the testing agent from which we monitor all of our clients' sites</li>
+                      <li>a Selenium based "recorder" which allows our customers to record scripts that simulate what a typical user of their site would do on a visit to their page</li>
+                      <li>a testing module that reproduces these scripts within a real web browser</li>
+                      <li>a custom load balancer for our complex testing network which spans the globe</li>
+                      <li>dozens of analytical reports that inform our clients on the performance of their websites</li>
+                      <li>our databases which contain hundreds of tables, views, and procedures</li>
+                    </ul>
+                    <p>The AlertBot brand has been the primary concern of my professional career since graduating from college, and I am immensely proud of the product.</p>
+                    <p>Visit AlertBot's home page <%= link_to "here.",   "http://www.alertbot.com" %></p>
+                    <hr>
+                </div>
+                <a name="EveWatch"></a>
+                <div class="col-lg-12 ">
+                    <img class="img-responsive img-border img-full" src="img/slide-2.jpg" alt="">
+                    <h2 class="text-center">Eve Watch
+                        
+                    </h2>
+                    <p>Eve Watch is an app on the Google Play store designed for players of the popular multiplayer game, Eve Online.  Eve Online is a game set in space, where players are pilots of ships that can fill roles such as miners, pirates, traders, or soldiers.  The game is set in a persistent universe, so the game is always running, even if you're not logged in.  Taking a note from my work on AlertBot, I decided to create an app for Eve Online players that would send them notifications when certain events occurred in-game.  Since Eve Online is a persistent universe, many important things can happen while the player is not logged in to the game.  For example, a user's personal space station could come under attack by a rival group of players.  In this case, a player could lose his (very) expensive property without ever having a chance to defend it.  Eve Watch can be configured to send an alert directly to the player's Android device when such an event occurs, giving them a chance to defend their territory.  In fact, the app can send different notifications for over 140 in-game events.</p>
+                    <p>The app was written in Java, and was created for two reasons.  First, I wanted to get some exposure to mobile app development and using APIs.  Second, I was a huge fan of Eve Online at the time of the app's creation, and I wanted to contribute to the community.</p>
+                    <p>View the app's page <%= link_to "on Google Play.",   "https://play.google.com/store/apps/details?id=net.evewatch" %></p>
+                    <p>Source code available <%= link_to "on Github.", "https://github.com/LayfieldK/eve_watch" %></p>
+                    <hr>
+                </div>
+                <a name="AStar"></a>
+                <div class="col-lg-12">
+                    <img class="img-responsive img-border img-full" src="img/slide-3.jpg" alt="">
+                    <h2 class="text-center">A* Research
+                        
+                    </h2>
+                    <p>Artificial intelligence, particularly in the context of video games, has always been an interest of mine.  I've often felt that for all of the excitement built up over upgrades in the graphics of games, not enough uproar is created at the lack of improvement in the AI in the majority of modern games.  One particular field of AI that I find particularly interesting is that of pathfinding.</p>
+                    <p>A* (pronounced A Star) is a pathfinding algorithm that is used in a variety of contexts beyond video games.  However, most of my research has been exclusive to the video game side of the algorithm.  Characters, or units, in most games use a pathfinding algorithm to move from point A to point B in a level.  If only one unit were to move at a time, there would be no problems with A* and units should be able to flawlessly make the shortest moves possible to reach their destinations.  A problem arises when multiple units move simultaneously.  If two units are ordered to move directly toward each other to a destination on the other side of the opposing unit, they will inevitably walk straight into each other and then look unintelligent while they attempt to navigate around each other.  I spent time researching a modified version of A* called Hierarchical Cooperative A* which aims to eliminate this problem by taking other units movement over time into consideration when plotting movement routes.</p>
+                    <p>To assist myself in visualizing the problem with A*, I created an applet in Java full of "nodes" where a unit can occupy space.  Within the applet, users can create custom pathfinding scenarios, or choose from any of 3 troublesome types of pathfinding situations.  These randomly generated, yet predefined, scenarios include a bottleneck, a random grid full of units and walls, and a setup where every unit on the map must reach their destination directly across the map from their starting points.  Also included in the applet is the ability to run massive amounts of tests with no visual element for data analysis.</p>
+                    <p>Source code for tool available <%= link_to "on Github.", "https://github.com/LayfieldK/astar_research" %></p>
+                    <p>Or download the tool and <%= link_to "use it yourself.", "https://s3.amazonaws.com/kevinlayfieldsite/AStarTool.jar" %>  Note that you must have a JRE installed on your machine to run the jar file, and also that this tool was made for myself, so it is not extremely user friendly.</p>
+                    <hr>
+                </div>
+                <a name="KevinLayfield"></a>
+                <div class="col-lg-12 ">
+                    <img class="img-responsive img-border img-full" src="img/slide-3.jpg" alt="">
+                    <h2 class="text-center">KevinLayfield.com
+                        
+                    </h2>
+                    <p>KevinLayfield.com was created in an effort to establish a place where friends, colleagues, and the computer science community can visit to learn more about the things that I find interesting.  I do not use many social networking sites, so this personal website is my outlet which allows me to put my thoughts and interests on the web and for others to view them if they wish.</p>
+                    <p>The site was created with the Rails framework within a development environment on Cloud 9, and it is hosted through Heroku.  I created this site after completing the Ruby On Rails Tutorial by Michael Hartl, which I greatly recommend to anyone looking to learn Rails.  I created a blogging solution within the site so that I can routinely write up articles about web development, software development, the video games industry, and personal interests.  I will continue to attempt to implement features that I want to experiment with into the site as I learn more about Ruby and Rails.</p>
+                    <p>Visit the site <%= link_to "here.", root_path %></p>
+                    <p>Source code available <%= link_to "on Github.", "https://github.com/LayfieldK/personal-site" %></p>
+                    <hr>
+                </div>
+                <a name="PopularOpinion"></a>
+                <div class="col-lg-12 ">
+                    <img class="img-responsive img-border img-full" src="img/slide-3.jpg" alt="">
+                    <h2 class="text-center">Popular Opinion
+                        
+                    </h2>
+                    <p>Something that many people take for granted on the Internet is just how quickly you can get answers to your questions.  What used to take a trip to the library or at least opening an encyclopedia, can now be discovered in mere moments.  Popular Opinion is an idea that uses this functionality of the web in a slightly different manner.  Instead of searching for factual information through Google, Wikipedia, or any other source, users can ask a subjective question to other users and receive a notification when a concensus has been made.  Where should I go for dinner tonight?  What hairstyle should I ask for the next time I visit a stylist?  What new TV show should I watch?  All of these questions can be presented to other users of the site, and the asking user can get live feedback to his question rather than web pages that are weeks, months, or even years old.</p>
+                    <p>Currently, Popular Opinion is in a very early stage of development, but the project is being constructed with Ruby On Rails.</p>
+                    <hr>
+                </div>
+                <a name="Zombie"></a>
+                <div class="col-lg-12 ">
+                    <img class="img-responsive img-border img-full" src="img/slide-3.jpg" alt="">
+                    <h2 class="text-center">Zombie Simulator
+                        
+                    </h2>
+                    <p>Many games, movies, tv shows, and books tell the story of a post-apocalyptic world overrun with zombies.  The idea has been around for at least fifty years and it has seen a surge in popularity within the last decade.  One thing that seems to go overlooked in many cases is the actual spread of the zombie infection.  At most, you see a few people get bit at the beginning of an outbreak and then we fast forward to a time when the zombies have all but wiped out humanity.  I think that there is a lot of potential for storytelling at the time of the main crisis event of a zombie invasion, and that is where this project came from.  This project aims to show the spread of a zombie infection from a handful of infected individuals to a much larger population.</p>
+                    <p>When I first loaded up Unreal Engine 4 to see how video game engines worked, this was my first idea.  It was the very first thing I decided to try to create.  So I took the default UE4 character model and created three alternate versions of it.  One, a civilian with the goal of running away from zombies for as long as possible.  Two, a zombie, searching for and infecting anything not already undead.  And Three, a cop, able to shoot zombies in an effort to protect the civilians.  When the program starts, the user gets a bird's eye view of the zombies chasing down cops and civilians until none remain.  This was a very simple idea, but it is an idea with so much potential for growth and development that I can never fully leave it alone.  I intend to expand upon for years to come.</p>
+                    <p>View a short video <%= link_to "of the simulator.", "https://www.youtube.com/watch?v=wbosCuhy9B4" %></p>
+                    <hr>
+                </div>
+                <a name="LegionaryMan"></a>
+                <div class="col-lg-12 ">
+                    <img class="img-responsive img-border img-full" src="img/slide-3.jpg" alt="">
+                    <h2 class="text-center">Zombie Simulator
+                        
+                    </h2>
+                    <p>When I was a kid, I played my NES every day.  My favorite game series was always Mega Man.  I loved how challenging the games were, and how it rewarded you for thinking about what types of weapons might work well against different types of enemies and bosses.  While experimenting with Unreal Engine's Paper2D technology, I decided that it would be fun to make a game like Mega Man.  I decided to cross that idea with my love for ancient Roman history to create Legionary Man.  Legionary Man is a sidescrolling action platformer where you play as a soldier of Rome tasked with defeating the enemies of Rome before they destroy your beloved city.</p>
+                    <p>I intend to create this game in stages.  First and most difficult, I will create one complete level of the game.  This will include sound effects, music, background art, character and enemy art, and of course a well thought out level design.  Once this is accomplished, additional levels will be created by following the existing pattern.  Eventually, this may just turn out to a completed game ready for others to enjoy.  For me, working on a classic sidescroller with an ancient Roman theme is already exciting and fulfilling.</p>
+                    <hr>
+                </div>
+                <a name="Lanista"></a>
+                <div class="col-lg-12 ">
+                    <img class="img-responsive img-border img-full" src="img/slide-3.jpg" alt="">
+                    <h2 class="text-center">The Lanista
+                        
+                    </h2>
+                    <p>Back before I started devouring everything I could related to ancient Rome, I watched the show Spartacus.  I loved the first season of that show, and often found myself more interested in Batiartus' story over Spartacus'.  Batiartus played the lanista, or the owner of the gladiator school, and was constantly faced with decisions regarding his gladiators, upcoming tournaments, backroom dealings, and politics.  I felt that this role would fit perfectly into a game.  Instead of being the heroic gladiator, the player could be the calculating lanista.</p>
+                    <p>The Lanista is a turn based strategy game where players must build up their ludus (gladiator school), and gain fame quickly enough to be invited to the opening games of the Colosseum.  Along the way, the player will face choices over how to teach their gladiators, how to handle disobedient gladiators, how to best eliminate rival lanistas, and how to earn the notice of top politicians.  Inevitably, most of the action of the game will take place in the arena, where the player will be given the option to command his gladiators in battle.  Whether they listen to you or not is another story.  Do they respect you?  Do they fear you?  Or do their own motives drive them more than your influence?</p>
+                    <p>View a early sample <%= link_to "of the battle system.", "https://www.youtube.com/watch?v=g3zqJAIvHQo" %></p>
+                    <hr>
+                </div>
+                <a name="KnightRunner"></a>
+                <div class="col-lg-12 ">
+                    <img class="img-responsive img-border img-full" src="img/slide-3.jpg" alt="">
+                    <h2 class="text-center">Knight Runner
+                        
+                    </h2>
+                    <p>A popular trend on phone app stores is to create an "endless" or "infinite" runner.  These games generally involve your character constantly running, moving faster and faster as the game goes on.  The player's goal is to avoid obstacles for as long as possible in order to get a high score.  Knight Runner is an endless runner created as an experiment to test the capabilities and usage of Unreal Engine 4's Paper2D technology.  I bought a cheap pack of art assets on UE4's marketplace and dove in.  In the game, your character dashes across the screen faster and faster as the game progresses with you jumping or sliding anytime you need to clear obstacles.</p>
+                    <p>The game was never given full polish of a proper UI, but it was only ever meant to be an experiment.  It also tends to make me sick when I play it too long because of the very fast repetition of the background design, but I am still very happy with the results of this project, as it gave me the confidence to create a proper sidescrolling game in Legionary Man.</p>
+                    <p>View a video <%= link_to "of a play session.", "https://www.youtube.com/watch?v=6Od1YYjNUfM" %></p>
+                    <hr>
+                </div>
+            </div>
+        </div>
 
-<a name="EveWatch"></a>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2>Eve Watch</h2>
-  </div>
-  
-  <div class="panel-body">
-  <p>Eve Watch is an app on the Google Play store designed for players of the popular multiplayer game, Eve Online.  Eve Online is a game set in space, where players are pilots of ships that can fill roles such as miners, pirates, traders, or soldiers.  The game is set in a persistent universe, so the game is always running, even if you're not logged in.  Taking a note from my work on AlertBot, I decided to create an app for Eve Online players that would send them notifications when certain events occurred in-game.  Since Eve Online is a persistent universe, many important things can happen while the player is not logged in to the game.  For example, a user's personal space station could come under attack by a rival group of players.  In this case, a player could lose his (very) expensive property without ever having a chance to defend it.  Eve Watch can be configured to send an alert directly to the player's Android device when such an event occurs, giving them a chance to defend their territory.  In fact, the app can send different notifications for over 140 in-game events.</p>
-  <p>The app was written in Java, and was created for two reasons.  First, I wanted to get some exposure to mobile app development and using APIs.  Second, I was a huge fan of Eve Online at the time of the app's creation, and I wanted to contribute to the community.</p>
-  <p>View the app's page <%= link_to "on Google Play.",   "https://play.google.com/store/apps/details?id=net.evewatch" %></p>
-  <p>Source code available <%= link_to "on Github.", "https://github.com/LayfieldK/eve_watch" %></p>
-  </div>
-  
-</div>
-
-<a name="AStar"></a>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2>A* Research</h2>
-  </div>
-  
-  <div class="panel-body">
-    <p>Artificial intelligence, particularly in the context of video games, has always been an interest of mine.  I've often felt that for all of the excitement built up over upgrades in the graphics of games, not enough uproar is created at the lack of improvement in the AI in the majority of modern games.  One particular field of AI that I find particularly interesting is that of pathfinding.</p>
-    <p>A* (pronounced A Star) is a pathfinding algorithm that is used in a variety of contexts beyond video games.  However, most of my research has been exclusive to the video game side of the algorithm.  Characters, or units, in most games use a pathfinding algorithm to move from point A to point B in a level.  If only one unit were to move at a time, there would be no problems with A* and units should be able to flawlessly make the shortest moves possible to reach their destinations.  A problem arises when multiple units move simultaneously.  If two units are ordered to move directly toward each other to a destination on the other side of the opposing unit, they will inevitably walk straight into each other and then look unintelligent while they attempt to navigate around each other.  I spent time researching a modified version of A* called Hierarchical Cooperative A* which aims to eliminate this problem by taking other units movement over time into consideration when plotting movement routes.</p>
-    <p>To assist myself in visualizing the problem with A*, I created an applet in Java full of "nodes" where a unit can occupy space.  Within the applet, users can create custom pathfinding scenarios, or choose from any of 3 troublesome types of pathfinding situations.  These randomly generated, yet predefined, scenarios include a bottleneck, a random grid full of units and walls, and a setup where every unit on the map must reach their destination directly across the map from their starting points.  Also included in the applet is the ability to run massive amounts of tests with no visual element for data analysis.</p>
-    <p>Source code for tool available <%= link_to "on Github.", "https://github.com/LayfieldK/astar_research" %></p>
-    <p>Or download the tool and <%= link_to "use it yourself.", "https://s3.amazonaws.com/kevinlayfieldsite/AStarTool.jar" %>  Note that you must have a JRE installed on your machine to run the jar file, and also that this tool was made for myself, so it is not extremely user friendly.</p>
-  </div>
-  
-</div>
-
-<a name="KevinLayfield"></a>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2>KevinLayfield.com</h2>
-  </div>
-  
-  <div class="panel-body">
-  <p>KevinLayfield.com was created in an effort to establish a place where friends, colleagues, and the computer science community can visit to learn more about the things that I find interesting.  I do not use many social networking sites, so this personal website is my outlet which allows me to put my thoughts and interests on the web and for others to view them if they wish.</p>
-  <p>The site was created with the Rails framework within a development environment on Cloud 9, and it is hosted through Heroku.  I created this site after completing the Ruby On Rails Tutorial by Michael Hartl, which I greatly recommend to anyone looking to learn Rails.  I created a blogging solution within the site so that I can routinely write up articles about web development, software development, the video games industry, and personal interests.  I will continue to attempt to implement features that I want to experiment with into the site as I learn more about Ruby and Rails.</p>
-  <p>Visit the site <%= link_to "here.", root_path %></p>
-  <p>Source code available <%= link_to "on Github.", "https://github.com/LayfieldK/personal-site" %></p>
-  </div>
-  
-</div>
-
-<a name="PopularOpinion"></a>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2>Popular Opinion</h2>
-  </div>
-  
-  <div class="panel-body">
-  <p>Something that many people take for granted on the Internet is just how quickly you can get answers to your questions.  What used to take a trip to the library or at least opening an encyclopedia, can now be discovered in mere moments.  Popular Opinion is an idea that uses this functionality of the web in a slightly different manner.  Instead of searching for factual information through Google, Wikipedia, or any other source, users can ask a subjective question to other users and receive a notification when a concensus has been made.  Where should I go for dinner tonight?  What hairstyle should I ask for the next time I visit a stylist?  What new TV show should I watch?  All of these questions can be presented to other users of the site, and the asking user can get live feedback to his question rather than web pages that are weeks, months, or even years old.</p>
-  <p>Currently, Popular Opinion is in a very early stage of development, but the project is being constructed with Ruby On Rails.</p>
-  </div>
-  
-</div>
-
-<a name="Zombie"></a>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2>Zombie Simulator</h2>
-  </div>
-  
-  <div class="panel-body">
-  <p>Many games, movies, tv shows, and books tell the story of a post-apocalyptic world overrun with zombies.  The idea has been around for at least fifty years and it has seen a surge in popularity within the last decade.  One thing that seems to go overlooked in many cases is the actual spread of the zombie infection.  At most, you see a few people get bit at the beginning of an outbreak and then we fast forward to a time when the zombies have all but wiped out humanity.  I think that there is a lot of potential for storytelling at the time of the main crisis event of a zombie invasion, and that is where this project came from.  This project aims to show the spread of a zombie infection from a handful of infected individuals to a much larger population.</p>
-  <p>When I first loaded up Unreal Engine 4 to see how video game engines worked, this was my first idea.  It was the very first thing I decided to try to create.  So I took the default UE4 character model and created three alternate versions of it.  One, a civilian with the goal of running away from zombies for as long as possible.  Two, a zombie, searching for and infecting anything not already undead.  And Three, a cop, able to shoot zombies in an effort to protect the civilians.  When the program starts, the user gets a bird's eye view of the zombies chasing down cops and civilians until none remain.  This was a very simple idea, but it is an idea with so much potential for growth and development that I can never fully leave it alone.  I intend to expand upon for years to come.</p>
-  <p>View a short video <%= link_to "of the simulator.", "https://www.youtube.com/watch?v=wbosCuhy9B4" %></p>
-  </div>
-  
-</div>
-
-<a name="LegionaryMan"></a>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2>Legionary Man</h2>
-  </div>
-  
-  <div class="panel-body">
-  <p>When I was a kid, I played my NES every day.  My favorite game series was always Mega Man.  I loved how challenging the games were, and how it rewarded you for thinking about what types of weapons might work well against different types of enemies and bosses.  While experimenting with Unreal Engine's Paper2D technology, I decided that it would be fun to make a game like Mega Man.  I decided to cross that idea with my love for ancient Roman history to create Legionary Man.  Legionary Man is a sidescrolling action platformer where you play as a soldier of Rome tasked with defeating the enemies of Rome before they destroy your beloved city.</p>
-  <p>I intend to create this game in stages.  First and most difficult, I will create one complete level of the game.  This will include sound effects, music, background art, character and enemy art, and of course a well thought out level design.  Once this is accomplished, additional levels will be created by following the existing pattern.  Eventually, this may just turn out to a completed game ready for others to enjoy.  For me, working on a classic sidescroller with an ancient Roman theme is already exciting and fulfilling.</p>
-  </div>
-  
-</div>
-
-<a name="Lanista"></a>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2>The Lanista</h2>
-  </div>
-  
-  <div class="panel-body">
-  <p>Back before I started devouring everything I could related to ancient Rome, I watched the show Spartacus.  I loved the first season of that show, and often found myself more interested in Batiartus' story over Spartacus'.  Batiartus played the lanista, or the owner of the gladiator school, and was constantly faced with decisions regarding his gladiators, upcoming tournaments, backroom dealings, and politics.  I felt that this role would fit perfectly into a game.  Instead of being the heroic gladiator, the player could be the calculating lanista.</p>
-  <p>The Lanista is a turn based strategy game where players must build up their ludus (gladiator school), and gain fame quickly enough to be invited to the opening games of the Colosseum.  Along the way, the player will face choices over how to teach their gladiators, how to handle disobedient gladiators, how to best eliminate rival lanistas, and how to earn the notice of top politicians.  Inevitably, most of the action of the game will take place in the arena, where the player will be given the option to command his gladiators in battle.  Whether they listen to you or not is another story.  Do they respect you?  Do they fear you?  Or do their own motives drive them more than your influence?</p>
-  <p>View a early sample <%= link_to "of the battle system.", "https://www.youtube.com/watch?v=g3zqJAIvHQo" %></p>
-  </div>
-  
-</div>
-
-<a name="KnightRunner"></a>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2>Knight Runner</h2>
-  </div>
-  
-  <div class="panel-body">
-  <p>A popular trend on phone app stores is to create an "endless" or "infinite" runner.  These games generally involve your character constantly running, moving faster and faster as the game goes on.  The player's goal is to avoid obstacles for as long as possible in order to get a high score.  Knight Runner is an endless runner created as an experiment to test the capabilities and usage of Unreal Engine 4's Paper2D technology.  I bought a cheap pack of art assets on UE4's marketplace and dove in.  In the game, your character dashes across the screen faster and faster as the game progresses with you jumping or sliding anytime you need to clear obstacles.</p>
-  <p>The game was never given full polish of a proper UI, but it was only ever meant to be an experiment.  It also tends to make me sick when I play it too long because of the very fast repetition of the background design, but I am still very happy with the results of this project, as it gave me the confidence to create a proper sidescrolling game in Legionary Man.</p>
-  <p>View a video <%= link_to "of a play session.", "https://www.youtube.com/watch?v=6Od1YYjNUfM" %></p>
-  </div>
-  
-</div>
+    </div>
+    <!-- /.container -->
