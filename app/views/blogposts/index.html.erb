@@ -9,8 +9,8 @@
                     </h2>
                     <hr>
                 </div>
-                <nav>
-                  <ul class="nav nav-justified">
+                <nav class="subnavbar">
+                  <ul class="nav nav-pills nav-justified">
                     <li class="<%= 'active' if current_page?(blogposts_path) %>"><%= link_to "All", blogposts_path %></li>
                     <li class="<%= 'active' if current_page?(tag_path("programming")) %>"><%= link_to "Programming", tag_path("programming") %></li>
                     <li class="<%= 'active' if current_page?(tag_path("reviews")) %>"><%= link_to "Reviews", tag_path("reviews") %></li>

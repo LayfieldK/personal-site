@@ -76,49 +76,58 @@
                             <span class="icon-next"></span>
                         </a>
                     </div>
-                    <h2 class="brand-before">
-                        <small>Welcome to</small>
-                    </h2>
-                    <h1 class="brand-name">Business Casual</h1>
-                    <hr class="tagline-divider">
-                    <h2>
-                        <small>By
-                            <strong>Start Bootstrap</strong>
-                        </small>
-                    </h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
+                    
+                    <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">Build a website
-                        <strong>worth visiting</strong>
+                    <h2 class="intro-text text-center">Who am I?
                     </h2>
                     <hr>
-                    <img class="img-responsive img-border img-left" src="img/intro-pic.jpg" alt="">
+                    <img class="img-responsive img-circle" src="img/intro-pic.jpg" alt="">
                     <hr class="visible-xs">
-                    <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
-                    <p>A huge thanks to <a href="http://join.deathtothestockphoto.com/" target="_blank">Death to the Stock Photo</a> for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                    <p>I am a software and web developer living in the Lehigh Valley of Pennsylvania.  I developed an interest in computer science in middle school and have never looked back since.  I love solving puzzles, learning new things, and applying my skills as a programmer to things that I love.  My favorite things to do include producing interesting things with my skillset, relaxing with my girlfriend, and embracing geekdom.</p>
+                </div>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">Beautiful boxes
-                        <strong>to showcase your content</strong>
-                    </h2>
-                    <hr>
-                    <p>Use as many boxes as you like, and put anything you want in them! They are great for just about anything, the sky's the limit!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+              <div class="col-lg-12">
+                <hr>
+                <h2 class="intro-text text-center">Most Recent Blog Post
+                </h2>
+                <hr>
+              </div>
+              <%= render @blogposts %>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="box">
+              <div class="col-lg-12">
+                <hr>
+                <h2 class="intro-text text-center">Current Top Personal Project
+                </h2>
+                <hr>
+              </div>
+              <div class="col-lg-12 ">
+                  <!--<img class="img-responsive img-border img-full" src="img/slide-3.jpg" alt=""> -->
+                  <h2 class="text-center">KevinLayfield.com
+                      
+                  </h2>
+                  <p>KevinLayfield.com was created in an effort to establish a place where friends, colleagues, and the computer science community can visit to learn more about the things that I find interesting.  I do not use many social networking sites, so this personal website is my outlet which allows me to put my thoughts and interests on the web and for others to view them if they wish.</p>
+                  <p>The site was created with the Rails framework within a development environment on Cloud 9, and it is hosted through Heroku.  I created this site after completing the Ruby On Rails Tutorial by Michael Hartl, which I greatly recommend to anyone looking to learn Rails.  I created a blogging solution within the site so that I can routinely write up articles about web development, software development, the video games industry, and personal interests.  I will continue to attempt to implement features that I want to experiment with into the site as I learn more about Ruby and Rails.</p>
+                  <p>Visit the site <%= link_to "here.", root_path %></p>
+                  <p>Source code available <%= link_to "on Github.", "https://github.com/LayfieldK/personal-site" %></p>
+                  <hr>
                 </div>
             </div>
         </div>
         
         
+<!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
