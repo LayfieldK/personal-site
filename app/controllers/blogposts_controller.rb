@@ -12,7 +12,10 @@ class BlogpostsController < ApplicationController
     else
       @blogposts = Blogpost.paginate(page: params[:page], :per_page => 5)
     end
-
+    rescue ActiveRecord::RecordNotFound
+        flash[:notice] = "Blogpost with given tag does not exist"
+        params[:tag] = nil
+        redirect_to :action => 'index', :tag => nil
   end
 
   # GET /blogposts/1
@@ -77,6 +80,9 @@ class BlogpostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_blogpost
       @blogpost = Blogpost.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        flash[:notice] = "Blogpost does not exist"
+        redirect_to :action => 'index'
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

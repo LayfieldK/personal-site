@@ -12,9 +12,15 @@
 
     
 <div class="container">
+  
   <% flash.each do |message_type, message| %>
+    <div class="row">
+      <div class="box">
         <div class="alert alert-<%= message_type %>"><%= message %></div>
+      </div>
+    </div>
   <% end %>
+  
   <%= yield %>
   <%= render 'layouts/footer' %>
 </div>
