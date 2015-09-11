@@ -15,8 +15,8 @@
   
   <% flash.each do |message_type, message| %>
     <div class="row">
-      <div class="box">
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <div class="box flashwarningbox">
+        <div class="alert-<%= message_type %> text-center"><h2 class="flashwarningtext"><%= message %></h2></div>
       </div>
     </div>
   <% end %>

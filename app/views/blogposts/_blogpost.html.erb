@@ -4,9 +4,13 @@
         <br>
         <small><%= blogpost.created_at.to_s(:long_ordinal) %></small>
     </h2>
-    <article>
-     <%= markdown(blogpost.body) %>
-    </article>
+    <% if action_name != 'show' %>
+        <article>
+         <%= markdown(blogpost.body) %>
+        </article>
+    <% else %>
+        <%= markdown(blogpost.body) %>
+    <% end %>
     <hr>
     Tags: <%= raw tag_links(blogpost.all_tags) %>
     <hr>

@@ -13,7 +13,7 @@ class BlogpostsController < ApplicationController
       @blogposts = Blogpost.paginate(page: params[:page], :per_page => 5)
     end
     rescue ActiveRecord::RecordNotFound
-        flash[:notice] = "Blogpost with given tag does not exist"
+        flash[:notice] = "Blog post with given tag does not exist"
         params[:tag] = nil
         redirect_to :action => 'index', :tag => nil
   end
@@ -21,6 +21,7 @@ class BlogpostsController < ApplicationController
   # GET /blogposts/1
   # GET /blogposts/1.json
   def show
+    @blogposts = Blogpost.where(:id => params[:id]).paginate(page: params[:page], :per_page => 5)
   end
 
   # GET /blogposts/new
@@ -39,7 +40,7 @@ class BlogpostsController < ApplicationController
 
     respond_to do |format|
       if @blogpost.save
-        format.html { redirect_to @blogpost, notice: 'Blogpost was successfully created.' }
+        format.html { redirect_to @blogpost, notice: 'Blog post was successfully created.' }
         format.json { render :show, status: :created, location: @blogpost }
       else
         format.html { render :new }
@@ -53,7 +54,7 @@ class BlogpostsController < ApplicationController
   def update
     respond_to do |format|
       if @blogpost.update(blogpost_params)
-        format.html { redirect_to @blogpost, notice: 'Blogpost was successfully updated.' }
+        format.html { redirect_to @blogpost, notice: 'Blog post was successfully updated.' }
         format.json { render :show, status: :ok, location: @blogpost }
       else
         format.html { render :edit }
@@ -67,7 +68,7 @@ class BlogpostsController < ApplicationController
   def destroy
     @blogpost.destroy
     respond_to do |format|
-      format.html { redirect_to blogposts_url, notice: 'Blogpost was successfully destroyed.' }
+      format.html { redirect_to blogposts_url, notice: 'Blog post was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -81,7 +82,7 @@ class BlogpostsController < ApplicationController
     def set_blogpost
       @blogpost = Blogpost.find(params[:id])
       rescue ActiveRecord::RecordNotFound
-        flash[:notice] = "Blogpost does not exist"
+        flash[:notice] = "Blog post does not exist"
         redirect_to :action => 'index'
     end
 

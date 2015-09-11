@@ -1,7 +1,10 @@
 <% if @blogposts.any? %>
 
     <div class="col-lg-10">
-    <%= render @blogposts %>
+        <% @blogposts.each do |bp| %>
+            <%= render bp %>
+        <% end %>
+    
       
   <%= will_paginate @blogposts %>
   </div>
