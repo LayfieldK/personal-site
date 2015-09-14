@@ -11,19 +11,13 @@ $body-bg: #2E5794;
 
 div.bg {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: image-url("bg.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+    background-color:#003380;
       // background fixed and background cover don't play nicely together on iOS. So background is fixed only on desktops.
   /* XXS */// @media only screen and (min-width : 320px)  {} // background isn't fixed here.
   /* XS  */// @media only screen and (min-width : 480px)  {} // background still isn't fixed here.
   /* SM  */// @media only screen and (min-width : 768px)  {} // background still isn't fixed here.
   /* MD  */// @media only screen and (min-width : 992px)  {background-attachment: fixed;} // Ok NOW the background is fixed.
   /* LG  */// @media only screen and (min-width : 1200px) {} // background is STILL fixed here.
-  width: 100%;
-          overflow: hidden;
 
 }
 
@@ -126,6 +120,14 @@ footer p {
 }
 
 @media screen and (min-width:768px) {
+    div.bg{
+        background: image-url("bg.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+    
     .brand {
         display: inherit;
         margin: 0;
@@ -194,6 +196,10 @@ footer p {
         table-layout: fixed;
         font-size: 1.25em;
     }
+}
+
+@media screen and (min-width:992px){
+
 }
 
 @media screen and (min-width:1200px) {
