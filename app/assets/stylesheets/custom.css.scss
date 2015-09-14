@@ -9,13 +9,13 @@ $body-bg: #2E5794;
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-body {
+.bg {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     background: image-url("bg.jpg") no-repeat center center fixed;
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    background-size: 100%;
-    -o-background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 h1,
