@@ -17,6 +17,10 @@ class StaticPagesController < ApplicationController
     
   end
   
+  def data_visualization
+    
+  end
+  
   
   
   protected

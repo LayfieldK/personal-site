@@ -1,4 +1,4 @@
-$body-bg: #2E5794;
+$body-bg: #003380;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -11,7 +11,7 @@ $body-bg: #2E5794;
 
 div.bg {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color:#003380;
+    background-color:$body-bg;
       // background fixed and background cover don't play nicely together on iOS. So background is fixed only on desktops.
   /* XXS */// @media only screen and (min-width : 320px)  {} // background isn't fixed here.
   /* XS  */// @media only screen and (min-width : 480px)  {} // background still isn't fixed here.
@@ -239,3 +239,54 @@ footer p {
     font-weight: 400;
     letter-spacing: 1px;
 }
+
+
+
+
+
+
+
+/* Northern America */
+.bm, .ca, .gl, .pm, .us,
+.noram {fill: #DF4949; background: #DF4949;}
+
+/* Latin America and the Caribbean */
+.ai, .ag, .aw, .bs, .bb, .bq, .vg, .ky, .cu, .cw, .dm, .do, .gp, .ht, .jm, .mq, .ms, .pr, .bl, .kn, .lc, .mf, .vc, .sx, .tt, .vi,
+.bz, .crr, .sv, .gt, .hn, .mx, .ni, .pa,
+.ar, .bo, .br, .cl, .co, .ec, .fk, .gf, .gy, .py, .pe, .sr, .uy, .ve,  
+.latam {fill: #E27A3F; background: #E27A3F;}
+
+/* Europe */
+.by, .bg, .cz, .hu, .md, .pl, .ro, .ru, .sk, .ua, 
+.ax, .dk, .ee, .fo, .fi, .gg, .is, .ie, .je, .lv, .lt, .im, .no, .sj, .se, .gb,
+.al, .ad, .ba, .hr, .gi, .gr, .va, .it, .mk, .mt, .me, .pt, .sm, .rs, .si, .es,
+.at, .be, .fr, .de, .li, .lu, .mc, .nl, .ch,
+.eu { fill: #EFC94C; background: #EFC94C;}
+
+/* Asia */
+.kz, .kg, .tj, .tm, .uz,
+.cn, .hk, .mo, .jp, .kp, .kr, .mn, .tw,
+.af, .bd, .bt, .in, .ir, .mv, .np, .pk, .lk,
+.bn, .kh, .id, .la, .my, .mm, .ph, .sg, .th, .tl, .vn,
+.am, .az, .bh, .cy, .ge, .iq, .il, .jo, .kw, .lb, .ps, .om, .qa, .sa, .sy, .tr, .ae, .ye, 
+.asia { fill: #9B59B6; background:  #9B59B6;}
+
+/* Oceania */
+.au, .cx, .cc, .nz, .nf,
+.fj, .nc, .pg, .sb, .vu,
+.gu, .ki, .mh, .fm, .nr, .mp, .pw,
+.as, .ck, .pf, .nu, .pn, .ws, .tk, .to, .tv, .wf,  
+.oceania {fill: #3498db; background: #3498db;}
+
+/* Africa */
+.bi, .km, .dj, .er, .et, .ke, .mg, .mw, .mu, .yt, .mz, .re, .rw, .sc, .so, .tz, .ug, .zm, .zw,
+.ao, .cm, .cf, .td, .cg, .cd, .gq, .ga, .st,
+.dz, .eg, .ly, .ma, .ss, .sd, .tn, .eh,
+.bw, .ls, .na,  .za, .sz,
+.bj, .bf, .cv, .gm, .gh, .gn, .gw, .lr, .ml, .mr, .ne, .ng, .sh, .sn, .sl, .tg, 
+.africa {fill: #F495A3; background: #F495A3;}
+
+/* Unclassified */
+.aq, .bv, .io, .tf, .hm, .gs, .um, 
+.a1, .a2, .o1, 
+.other { fill: #45B29D; background: #45B29D;}

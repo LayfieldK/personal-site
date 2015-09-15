@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'admin'  =>    'static_pages#admin'
   get 'about' =>    'static_pages#about'
   get 'projects' =>   'static_pages#projects'
+  get 'data_visualization' =>  'static_pages#data_visualization'
   get 'tags/:tag', to: 'blogposts#index', as: "tag"
 
   resources :blogposts
