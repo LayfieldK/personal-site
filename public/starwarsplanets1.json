@@ -1,0 +1,215 @@
+{
+	"name": "planets",
+ 	"children": [
+		{
+			"name": "Alderaan",
+			"diameter": "12500",
+			"population": "2000000000"
+		},
+		{
+			"name": "Yavin IV",
+			"diameter": "10200",
+			"population": "1000"
+		},
+		{
+			"name": "Bespin",
+			"diameter": "118000",
+			"population": "6000000"
+		},
+		{
+			"name": "Endor",
+			"diameter": "4900",
+			"population": "30000000"
+		},
+		{
+			"name": "Naboo",
+			"diameter": "12120",
+			"population": "4500000000"
+		},
+		{
+			"name": "Coruscant",
+			"diameter": "12240",
+			"population": "1000000000000"
+		},
+		{
+			"name": "Kamino",
+			"diameter": "19720",
+			"population": "1000000000"
+		},
+		{
+			"name": "Geonosis",
+			"diameter": "11370",
+			"population": "100000000000"
+		},
+		{
+			"name": "Utapau",
+			"diameter": "12900",
+			"population": "95000000"
+		},
+		{
+			"name": "Mustafar",
+			"diameter": "4200",
+			"population": "20000"
+		},
+		{
+			"name": "Kashyyyk",
+			"diameter": "12765",
+			"population": "45000000"
+		},
+		{
+			"name": "Polis Massa",
+			"diameter": "0",
+			"population": "1000000"
+		},
+		{
+			"name": "Mygeeto",
+			"diameter": "10088",
+			"population": "19000000"
+		},
+		{
+			"name": "Felucia",
+			"diameter": "9100",
+			"population": "8500000"
+		},
+		{
+			"name": "Cato Neimoidia",
+			"diameter": "0",
+			"population": "10000000"
+		},
+		{
+			"name": "Saleucami",
+			"diameter": "14920",
+			"population": "1400000000"
+		},
+		{
+			"name": "Eriadu",
+			"diameter": "13490",
+			"population": "22000000000"
+		},
+		{
+			"name": "Corellia",
+			"diameter": "11000",
+			"population": "3000000000"
+		},
+		{
+			"name": "Rodia",
+			"diameter": "7549",
+			"population": "1300000000"
+		},
+		{
+			"name": "Nal Hutta",
+			"diameter": "12150",
+			"population": "7000000000"
+		},
+		{
+			"name": "Dantooine",
+			"diameter": "9830",
+			"population": "1000"
+		},
+		{
+			"name": "Bestine IV",
+			"diameter": "6400",
+			"population": "62000000"
+		},
+		{
+			"name": "Ord Mantell",
+			"diameter": "14050",
+			"population": "4000000000"
+		},
+		{
+			"name": "Trandosha",
+			"diameter": "0",
+			"population": "42000000"
+		},
+		{
+			"name": "Socorro",
+			"diameter": "0",
+			"population": "300000000"
+		},
+		{
+			"name": "Mon Cala",
+			"diameter": "11030",
+			"population": "27000000000"
+		},
+		{
+			"name": "Chandrila",
+			"diameter": "13500",
+			"population": "1200000000"
+		},
+		{
+			"name": "Sullust",
+			"diameter": "12780",
+			"population": "18500000000"
+		},
+		{
+			"name": "Toydaria",
+			"diameter": "7900",
+			"population": "11000000"
+		},
+		{
+			"name": "Malastare",
+			"diameter": "18880",
+			"population": "2000000000"
+		},
+		{
+			"name": "Dathomir",
+			"diameter": "10480",
+			"population": "5200"
+		},
+		{
+			"name": "Ryloth",
+			"diameter": "10600",
+			"population": "1500000000"
+		},
+		{
+			"name": "Vulpter",
+			"diameter": "14900",
+			"population": "421000000"
+		},
+		{
+			"name": "Tund",
+			"diameter": "12190",
+			"population": "0"
+		},
+		{
+			"name": "Haruun Kal",
+			"diameter": "10120",
+			"population": "705300"
+		},
+		{
+			"name": "Glee Anselm",
+			"diameter": "15600",
+			"population": "500000000"
+		},
+		{
+			"name": "Champala",
+			"diameter": "unknown",
+			"population": "3500000000"
+		},
+		{
+			"name": "Ojom",
+			"diameter": "unknown",
+			"population": "500000000"
+		},
+		{
+			"name": "Skako",
+			"diameter": "unknown",
+			"population": "500000000000"
+		},
+		{
+			"name": "Muunilinst",
+			"diameter": "13800",
+			"population": "5000000000"
+		},
+		{
+			"name": "Kalee",
+			"diameter": "13850",
+			"population": "4000000000"
+		},
+		{
+			"name": "Tatooine",
+			"diameter": "10465",
+			"population": "200000"
+		}
+	]
+}
