@@ -211,190 +211,158 @@ d3.select(self.frameElement).style("height", diameter + "px");
 
 
 <style>
+body {
+  font: 11px sans-serif;
+}
 
-	body {
-		text-rendering: optimizeLegibility;
-		margin: 0px;
-	}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
 
-	svg {
-		background-color: rgba(166, 178, 204, 1.000);
-	}
+.dot {
+  stroke: #000;
+}
 
-	svg circle {
-		fill: rgba(225, 152, 53, 1.000);
-		-webkit-svg-shadow: -2px 1px 4px rgba(0, 0, 0, 0.6);
-	}
+.tooltip {
+  position: absolute;
+  width: 200px;
+  height: 28px;
+  pointer-events: none;
+}
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
 
-	svg text {
-		fill: rgba(255, 255, 255, 0.9);
-		font-weight: normal;
-		font-family: sans-serif;
-		font-size: 10pt;
-		text-anchor: middle;
-		alignment-baseline: central;
-	}
-
-	svg .title {
-		font-family: sans-serif;
-		font-weight: bold;
-		font-size: 32pt;
-		letter-spacing: -0.05em;
-		text-anchor: start;
-		fill: rgba(255, 255, 255, 0.9);
-	}
-
-	svg div.labelDiv {
-		padding: 0px;
-		margin: 0px;
-		display: table-cell;
-		vertical-align: middle;
-		text-align: center;
-	}
-
-	svg foreignObject {
-		padding: 0px;
-	}
-
-	svg .label {
-		font-weight: normal;
-		font-family: sans-serif;
-		font-size: 10pt;
-		color: rgba(255, 255, 255, 0.9);
-	}
-	
-	</style>
 <script>
-d3.json("starwarsplanets1.json", function(error, json) {
-	var h = 500;
-	var w = 1200;
-	var minimumBubbleSize = 10;
-	var labelsWithinBubbles = true;
-	var title = "Relative Sizes Of The Planets, In Order Of Size";
-	var dataset = [{label : "Mercury", value: 1134, xPos: 0},
-	{label: "Venus ", value: 7088, xPos: 0},
-	{label: "Earth", value: 7853, xPos: 0},
-	{label: "Mars", value: 2206, xPos: 0},
-	{label: "Jupiter", value: 983415, xPos: 0},
-	{label: "Uranus", value: 125660, xPos: 0},
-	{label: "Neptune", value: 113408, xPos: 0},
-	{label: "Saturn", value: 693957, xPos: 0}];
-	var gapBetweenBubbles = 15;
-	var xPadding = 50;
-	var yPadding = 100;
-	var scaling = 20;
+//roman emperors scatterplot - 
+//	x axis is year
+//	y axis is years in office at death
+//	color of circle is death type
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
+/* 
+ * value accessor - returns the value to encode for a given data object.
+ * scale - maps value to a visual display encoding, such as a pixel position.
+ * map function - maps from data value to display value
+ * axis - sets up axis
+ */ 
 
-	/* Sort the dataset to ensure the bubble are always ascending */
-	dataset = dataset.sort(function (a, b) { return (a.value - b.value);});
-	
-	/* Scale the dataset */
-	var factor = minimumBubbleSize / dataset[0].value;
-	dataset.forEach(function(d) { d.value = d.value * factor; });
+// setup x 
+var xValue = function(d) { return d.Calories;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
-	/* Scaling */
+// setup y
+var yValue = function(d) { return d["Protein (g)"];}, // data -> value
+    yScale = d3.scale.linear().range([height, 0]), // value -> display
+    yMap = function(d) { return yScale(yValue(d));}, // data -> display
+    yAxis = d3.svg.axis().scale(yScale).orient("left");
 
-	function getRadius(area) {
-		return Math.sqrt(area / Math.PI);
-	}
+// setup fill color
+var cValue = function(d) { return d.Manufacturer;},
+    color = d3.scale.category10();
 
-	function getLabelDivSideFromArea(area) {
-		return Math.sqrt(Math.pow(2 * rScale(area), 2) / 2);
-	}
+// add the graph canvas to the body of the webpage
+var svg3 = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-	var rScale = function(input) {
-		/* Magic number here is just to get a reasonable sized smallest bubble */
-		return getRadius(input) * scaling;
-	}
+// add the tooltip area to the webpage
+var tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 
-	/* For bubbles that are too big to centre their text, compute a better position */
+// load data
+d3.csv("cereal.csv", function(error, data) {
 
-	function getNewXPosition(leftBubble, rightBubble) {
+  // change string (from CSV) into number format
+  data.forEach(function(d) {
+    d.Calories = +d.Calories;
+    d["Protein (g)"] = +d["Protein (g)"];
+//    console.log(d);
+  });
 
-	}
+  // don't want dots overlapping axis, so add in buffer to data domain
+  xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
+  yScale.domain([d3.min(data, yValue)-1, d3.max(data, yValue)+1]);
 
-	function getNewYPosition(leftBubble, rightBubble) {
+  // x-axis
+  svg3.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("Calories");
 
-	}
+  // y-axis
+  svg3.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Protein (g)");
 
-	/* Create the chart */
+  // draw dots
+  svg3.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", 3.5)
+      .attr("cx", xMap)
+      .attr("cy", yMap)
+      .style("fill", function(d) { return color(cValue(d));}) 
+      .on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html(d["Cereal Name"] + "<br/> (" + xValue(d) 
+	        + ", " + yValue(d) + ")")
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
 
-	var svg3 = d3.select("body")
-	.append("svg")
-	.attr("width", w)
-	.attr("height", h)
+  // draw legend
+  var legend = svg3.selectAll(".legend")
+      .data(color.domain())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
-	/* Adjust left hand side to add on the radius of the first bubble */
-	xPaddingPlusRadius = xPadding + rScale(dataset[0].value);
-	dataset[0].xPos = xPaddingPlusRadius;
-	
-	var bubble = d3.layout.pack().sort(null)
-                .size([w, h])
-                .value(function(d) {return d.size;})
-         // .sort(function(a, b) {
-                //  return -(a.value - b.value)
-                // }) 
-                .padding(3);
-  
-  // generate data with calculated layout values
-  var nodes = bubble.nodes(processData(json))
-                        .filter(function(d) { return !d.children; }); // filter out the outer bubble
-	
-	
+  // draw legend colored rectangles
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
 
-	var node = svg3.selectAll("g")
-	.data(nodes)
-	.enter()
-	.append("g")
-	.attr("class", "node")
-     .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-
-	node
-	.append("circle")
-	 .attr("r", function(d) { return d.r; })
-      .style("fill", function(d) { return color(d.packageName); });;
-	
-	node.append("text")
-	.attr("dy", ".3em")
-      .style("text-anchor", "middle")
-      .text(function(d) { return d.name; });
-      
-  
-
-	var accumulator = xPaddingPlusRadius;
-	
-	
-
-	/* Draw the chart title */
-
-	svg3.append("text")
-	.attr("x", xPadding)
-	.attr("y", h - 40)
-	.attr("class", "title")
-	.text(title);
-	
-	function processData(data) {
-    
-    var obj = data;
-//    alert(data.name)
-    var planets = data.children;
-//    alert(planets.length);
-    var newDataSet = [];
-
-//alert(planets[1].name);
-    
-    for(i=0; i < planets.length; i++){
-      if(planets[i].population != "unknown"){
-        newDataSet.push({name: planets[i].name, className: planets[i].name.toLowerCase(), size: Math.pow(planets[i].population, 1/3), value: Math.pow(planets[i].population, 1/3)});
-      }
-    }
-    //for(var prop in planets) {
-      
-    //  newDataSet.push({name: planets[1].name, className: prop.toLowerCase(), size: obj[prop]});
-      
-    //}
-
-    return {children: newDataSet};
-  }
+  // draw legend text
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d;})
 });
-	</script>
+
+</script>
