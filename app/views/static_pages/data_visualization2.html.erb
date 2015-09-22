@@ -43,6 +43,11 @@ body {
 					font-size: 11px;
 					fill: #666;
 				}
+				.legend text {
+					font-family: sans-serif;
+					font-size: 11px;
+					fill: #666;
+				}
 			.label {
 				font-size:14px;
 				fill:rgba(0,0,0,0.5);
@@ -63,14 +68,17 @@ fonts {
 </style>
 
 <div class="row">
-          <div id="RomanEmperorScatterplot" class="box">
+          <div  class="box">
               <div class="col-lg-12 text-center">
+              		<div id="RomanEmperorScatterplot">
                   <script>
                       d3.csv("RomanEmperorsDates.csv", function(error, data) {
 		var margin = {top: 30, right: 10, bottom: 20, left: 60},
 			width = 1110 - margin.left - margin.right,
-			legendWidthOffset = 150;
+			legendWidthOffset = 115;
 			height = 500 - margin.top - margin.bottom;
+			
+		var aR = width / height;
 			
 		var format = d3.time.format("%m/%d/%Y");
     var xAxisFormat = d3.time.format("%Y");
@@ -152,17 +160,21 @@ fonts {
 			.tickSize(-width+legendWidthOffset)
 			;
 			
-		
-		var svg = d3.select("#RomanEmperorScatterplot").append("svg")
+		var realSvg = svg = d3.select("#RomanEmperorScatterplot")
+			.append("svg")
+			.attr("class", "RomanEmperorScatterplotSVG")
 			.attr("width", width  + margin.left + margin.right)
 			.attr("height", height + margin.top + margin.bottom)
+			.attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
+			.attr("preserveAspectRatio", "xMidYMid")
+		var svg = realSvg
 			.append("g")
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-			.call(d3.behavior.zoom().x(x).xExtent([xMin,xMax]).y(y).yExtent([0,60]).scaleExtent([1, 8]).on("zoom", zoom));
+			.call(d3.behavior.zoom().x(x).xExtent([xMin,xMax]).y(y).yExtent([0,60]).scaleExtent([1, 8]).on("zoom", redraw));
 			
 			 
 		
-		svg.append("rect")
+		var rect = svg.append("rect")
 			.attr("width", width-legendWidthOffset)
 			.attr("height", height);
 		
@@ -174,6 +186,8 @@ fonts {
 		svg.append("g")
 			.attr("class", "y axis")
 			.call(yAxis);
+			
+			 
 
 		
 		var poly = svg.selectAll("polygon")
@@ -191,7 +205,7 @@ fonts {
           tooltip.transition()
                .duration(200)
                .style("opacity", .9);
-          tooltip.html(d.Name + "<br>Reign Ended By: " + d.EndType + "<br>Reign Duration: " + ((d.EndYear.getTime() - d.BeganYear.getTime()) / 1000 / 60 / 60 / 24 / 365).toFixed(2) + " years")
+          tooltip.html(d.Name + "<br>Reign Ended By: " + d.EndType + "<br>Reign Duration: " + ((d.EndYear.getTime() - d.BeganYear.getTime()) / 1000 / 60 / 60 / 24 / 365).toFixed(1) + " years")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
@@ -199,7 +213,7 @@ fonts {
           tooltip.html("");
       });
       
-      // draw legend
+     // draw legend
                       var legend = svg.selectAll(".legend")
                           .data(color.domain())
                         .enter().append("g")
@@ -225,7 +239,25 @@ fonts {
 			return "translate("+x(d.EndYear.getTime())+","+y((d.EndYear.getTime() - d.BeganYear.getTime()) / 1000 / 60 / 60 / 24 / 365)+")";
 		}
 		
-		function zoom() {
+		function redraw() {
+			
+			newWidth  = parseFloat(d3.select("#RomanEmperorScatterplot").style("width")) - margin.left - margin.right;
+			newHeight  = newWidth/aR  ;
+			svg.attr("width",newWidth)
+				.attr("height",newHeight)
+			;
+			//rect.attr("width",newWidth-legendWidthOffset)
+			//	.attr("height",newHeight);
+			realSvg.attr("width",newWidth)
+				.attr("height",newHeight)
+				.attr("width", width  + margin.left + margin.right)
+				.attr("height", height + margin.top + margin.bottom)
+				;
+				
+			width = newWidth;
+			height = newHeight;
+			
+			
 		  svg.select(".x.axis").call(xAxis);
 		  svg.select(".y.axis").call(yAxis);
       svg.selectAll("polygon")			
@@ -234,8 +266,11 @@ fonts {
 			})
       .attr('points','4.569,2.637 0,5.276 -4.569,2.637 -4.569,-2.637 0,-5.276 4.569,-2.637');
 		}
+		d3.select(window).on('resize', redraw);
+		redraw();
 });
                   </script>
+                  </div>
               </div>
           </div>
 </div>
