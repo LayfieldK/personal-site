@@ -1,0 +1,241 @@
+<script src="d3-zoom-pan-extent.js"></script>
+<style>
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body {
+	background:#fefdf5;
+	font-family:'Trade Gothic Next W01',sans-serif;
+	color:#333;
+}
+
+
+		svg {
+			font-family:'Trade Gothic Next W01',sans-serif;
+			/*background:rgba(255,255,255,0.3);
+			border:1px solid rgba(255,255,255,0.6);*/
+		}
+			rect {
+				fill: transparent;
+				shape-rendering: crispEdges;
+			}
+			.hex {
+			}
+			.active {
+				z-index:5;
+				position:relative;
+			}
+			.inactive polygon {
+				fill:#aaa;
+				opacity:0.1;
+			}
+			.axis {
+			}
+				.axis path,
+				.axis line {
+					fill: none;
+					stroke: rgba(0,0,0,0.1);
+					shape-rendering: crispEdges;
+				}
+				.axis text {
+					font-family: sans-serif;
+					font-size: 11px;
+					fill: #666;
+				}
+			.label {
+				font-size:14px;
+				fill:rgba(0,0,0,0.5);
+				shape-rendering:auto;
+			}
+		
+fonts {
+	font-family:'TradeGothicNextW01-Ligh 693250';
+	font-family:'Trade Gothic Next W01';
+	font-family:'TradeGothicNextW01-Bold 693229';
+	font-family:'TradeGothicNextW01-BdCm';
+}
+
+
+
+
+  
+</style>
+
+<div class="row">
+          <div id="RomanEmperorScatterplot" class="box">
+              <div class="col-lg-12 text-center">
+                  <script>
+                      d3.csv("RomanEmperorsDates.csv", function(error, data) {
+		var margin = {top: 30, right: 10, bottom: 20, left: 60},
+			width = 1110 - margin.left - margin.right,
+			legendWidthOffset = 150;
+			height = 500 - margin.top - margin.bottom;
+			
+		var format = d3.time.format("%m/%d/%Y");
+    var xAxisFormat = d3.time.format("%Y");
+    
+    data.forEach(function(d) {
+                        if (d.BeganYear.indexOf("-") > -1){
+                            d.BeganYear = d.BeganYear.replace("-", "");
+                            d.BeganYear = format.parse(d.BeganYear);
+                            d.BeganYear.setFullYear(-d.BeganYear.getFullYear()); 
+                            
+                            
+                        }else{
+                           d.BeganYear = format.parse(d.BeganYear);
+                        }
+                        
+                        if (d.EndYear.indexOf("-") > -1){
+                            d.EndYear = d.EndYear.replace("-", "");
+                            d.EndYear = format.parse(d.EndYear);
+                            d.EndYear.setFullYear(-d.EndYear.getFullYear()); 
+                            
+                            
+                        }else{
+                           d.EndYear = format.parse(d.EndYear);
+                        }
+                       
+                        //console.log(d.BeganYear);
+                      });
+		
+		var xMax = d3.max(data, function(d) { 
+		   return d.EndYear.getTime();
+		}),
+			xMin = d3.min(data, function(d) { 
+		   return d.EndYear.getTime();
+		}),
+			yMax = d3.max(data, function(d) { return (d.EndYear.getTime() - d.BeganYear.getTime()) / 1000 / 60 / 60 / 24 / 365; }),
+			yMin = 0;
+		
+		//Define scales
+		var x = d3.time.scale()
+			.domain([xMin, xMax])
+			.range([0, width-legendWidthOffset]);
+			
+		var y = d3.scale.linear()
+			.domain([yMin, yMax])
+			.range([height, 0]);
+			
+		var colourScale = function(val){
+			var colours = ['#9d3d38','#c5653a','#f9b743','#9bd6d7'];
+			if (val > 30) {
+				return colours[0];
+			} else if (val > 10) {
+				return colours[1];
+			} else if (val > 0) {
+				return colours[2];
+			} else {
+				return colours[3];
+			}
+		};
+		
+		var cValue = function(d) { return d.EndType;},
+                        color = d3.scale.category10();
+		
+		var tooltip = d3.select("body").append("div")
+                        .attr("class", "tooltip")
+                        .style("opacity", 0);
+		
+		//Define X axis
+		var xAxis = d3.svg.axis()
+			.scale(x)
+			.orient("bottom")
+			.tickSize(-height)
+			;
+		
+		//Define Y axis
+		var yAxis = d3.svg.axis()
+			.scale(y)
+			.orient("left")
+			.ticks(5)
+			.tickSize(-width+legendWidthOffset)
+			;
+			
+		
+		var svg = d3.select("#RomanEmperorScatterplot").append("svg")
+			.attr("width", width  + margin.left + margin.right)
+			.attr("height", height + margin.top + margin.bottom)
+			.append("g")
+			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+			.call(d3.behavior.zoom().x(x).xExtent([xMin,xMax]).y(y).yExtent([0,60]).scaleExtent([1, 8]).on("zoom", zoom));
+			
+			 
+		
+		svg.append("rect")
+			.attr("width", width-legendWidthOffset)
+			.attr("height", height);
+		
+		svg.append("g")
+			.attr("class", "x axis")
+			.attr("transform", "translate(0," + height + ")")
+			.call(xAxis);
+		
+		svg.append("g")
+			.attr("class", "y axis")
+			.call(yAxis);
+
+		
+		var poly = svg.selectAll("polygon")
+			.data(data)
+			.enter()
+			.append("polygon")
+      .attr("class","hex")
+			.attr("transform", function(d, i) {
+				return getPointPlacementString(d);
+			})
+			.attr('points','4.569,2.637 0,5.276 -4.569,2.637 -4.569,-2.637 0,-5.276 4.569,-2.637')
+			.attr("opacity","0.8")
+			.style("fill", function(d) { return color(cValue(d));}) 
+		 	.on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html(d.Name + "<br>Reign Ended By: " + d.EndType + "<br>Reign Duration: " + ((d.EndYear.getTime() - d.BeganYear.getTime()) / 1000 / 60 / 60 / 24 / 365).toFixed(2) + " years")
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.html("");
+      });
+      
+      // draw legend
+                      var legend = svg.selectAll(".legend")
+                          .data(color.domain())
+                        .enter().append("g")
+                          .attr("class", "legend")
+                          .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+                    
+                      // draw legend colored rectangles
+                      legend.append("rect")
+                          .attr("x", width - 18)
+                          .attr("width", 18)
+                          .attr("height", 18)
+                          .style("fill", color);
+                    
+                      // draw legend text
+                      legend.append("text")
+                          .attr("x", width - 24)
+                          .attr("y", 9)
+                          .attr("dy", ".35em")
+                          .style("text-anchor", "end")
+                          .text(function(d) { return d;});
+		
+		function getPointPlacementString(d){
+			return "translate("+x(d.EndYear.getTime())+","+y((d.EndYear.getTime() - d.BeganYear.getTime()) / 1000 / 60 / 60 / 24 / 365)+")";
+		}
+		
+		function zoom() {
+		  svg.select(".x.axis").call(xAxis);
+		  svg.select(".y.axis").call(yAxis);
+      svg.selectAll("polygon")			
+      .attr("transform", function(d, i) {
+				return getPointPlacementString(d);
+			})
+      .attr('points','4.569,2.637 0,5.276 -4.569,2.637 -4.569,-2.637 0,-5.276 4.569,-2.637');
+		}
+});
+                  </script>
+              </div>
+          </div>
+</div>

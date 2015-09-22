@@ -2,7 +2,7 @@
           <div id="RomanEmperorScatterplot" class="box">
               <div class="col-lg-12 text-center">
                   <script>
-                  
+                    d3.csv("RomanEmperorsDates.csv", function(error, data) {
                   
                     //roman emperors scatterplot - 
                     //	x axis is year
@@ -41,11 +41,7 @@
                         color = d3.scale.category10();
                         
                         
-                    var zoom = d3.behavior.zoom()
-                    .x(xScale)
-                    .y(yScale)
-                    .scaleExtent([1, 32])
-                    .on("zoom", zoomed);
+                    
                     
                     // add the graph canvas to the body of the webpage
                     var svg5 = d3.select("#RomanEmperorScatterplot").append("svg")
@@ -53,7 +49,7 @@
                         .attr("height", height + margin.top + margin.bottom)
                       .append("g")
                         .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-                        .call(zoom);
+                        .call(d3.behavior.zoom().x(xScale).y(yScale).scaleExtent([1, 8]).on("zoom", zoom));
                         
                     
                     
@@ -63,7 +59,7 @@
                         .style("opacity", 0);
                     
                     // load data
-                    d3.csv("RomanEmperorsDates.csv", function(error, data) {
+                   
                     
                       data.forEach(function(d) {
                         if (d.BeganYear.indexOf("-") > -1){
@@ -166,13 +162,16 @@
                           .attr("dy", ".35em")
                           .style("text-anchor", "end")
                           .text(function(d) { return d;})
-                    });
+                   
                     
-                    function zoomed() {
+                    function zoom() {
+                      
                       svg5.select(".x.axis").call(xAxis);
-                      svg5.select(".y.axis").call(yAxis);
+                		  svg5.select(".y.axis").call(yAxis);
+                      
+                      
                     }
-                    
+                    });
                     </script>
                   
                   

@@ -21,7 +21,9 @@ class StaticPagesController < ApplicationController
     
   end
   
-  
+  def data_visualization2
+    
+  end
   
   protected
   
