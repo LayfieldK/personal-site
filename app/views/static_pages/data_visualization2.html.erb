@@ -241,7 +241,18 @@ fonts {
 		
 		function redraw() {
 			
-			newWidth  = parseFloat(d3.select("#RomanEmperorScatterplot").style("width")) - margin.left - margin.right;
+			
+			
+			
+		  svg.select(".x.axis").call(xAxis);
+		  svg.select(".y.axis").call(yAxis);
+      svg.selectAll("polygon")			
+      .attr("transform", function(d, i) {
+				return getPointPlacementString(d);
+			})
+      .attr('points','4.569,2.637 0,5.276 -4.569,2.637 -4.569,-2.637 0,-5.276 4.569,-2.637');
+      
+      newWidth  = parseFloat(d3.select("#RomanEmperorScatterplot").style("width")) - margin.left - margin.right;
 			newHeight  = newWidth/aR  ;
 			svg.attr("width",newWidth)
 				.attr("height",newHeight)
@@ -256,15 +267,6 @@ fonts {
 				
 			width = newWidth;
 			height = newHeight;
-			
-			
-		  svg.select(".x.axis").call(xAxis);
-		  svg.select(".y.axis").call(yAxis);
-      svg.selectAll("polygon")			
-      .attr("transform", function(d, i) {
-				return getPointPlacementString(d);
-			})
-      .attr('points','4.569,2.637 0,5.276 -4.569,2.637 -4.569,-2.637 0,-5.276 4.569,-2.637');
 		}
 		d3.select(window).on('resize', redraw);
 		redraw();
