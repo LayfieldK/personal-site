@@ -175,7 +175,9 @@ fonts {
 		
 		var rect = svg.append("rect")
 			.attr("width", width-legendWidthOffset)
-			.attr("height", height);
+			.attr("height", height)
+			.attr("pointer-events", "all");
+		
 		
 		svg.append("g")
 			.attr("class", "x axis")
@@ -186,10 +188,19 @@ fonts {
 			.attr("class", "y axis")
 			.call(yAxis);
 			
-			 
+		var clip = svg.append("svg:clipPath")
+    .attr("id", "clip")
+    .append("svg:rect")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", width - legendWidthOffset)
+    .attr("height", height);
+    
+    var chartBody = svg.append("g")
+    .attr("clip-path", "url(#clip)");
 
 		
-		var poly = svg.selectAll("polygon")
+		var poly = chartBody.selectAll("polygon")
 			.data(data)
 			.enter()
 			.append("polygon")
@@ -244,7 +255,7 @@ fonts {
 			
 		  svg.select(".x.axis").call(xAxis);
 		  svg.select(".y.axis").call(yAxis);
-      svg.selectAll("polygon")			
+      chartBody.selectAll("polygon")			
       .attr("transform", function(d, i) {
 				return getPointPlacementString(d);
 			})
