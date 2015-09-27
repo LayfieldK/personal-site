@@ -1,87 +1,87 @@
-Name,BirthYear,BeginType,BeganYear,EndYear,EndType,,
-Augustus,-63,Seized Power,1/16/-27,8/19/14,Natural Causes,,
-Tiberius,-42,Adoptive Inheritance,9/18/14,3/16/37,Natural Causes,,
-Caligula,12,Adoptive Inheritance,3/18/37,1/24/41,Assassination,,
-Claudius,-10,Hailed By Praetorian Guard,1/25/41,10/13/54,Assassination,,
-Nero,37,Adoptive Inheritance,10/13/54,6/9/68,Suicide,,
-Galba,-3,Seized Power,6/8/68,1/15/69,Praetorian Guard,,
-Otho,32,Hailed By Praetorian Guard,1/15/69,4/16/69,Suicide,,
-Vitellius,15,Seized Power,4/17/69,12/20/69,Executed,,
-Vespasian,9,Seized Power,12/21/69,6/24/79,Natural Causes,,
-Titus,39,Inheritance,6/24/79,9/13/81,Natural Causes,,
-Domitian,51,Inheritance,9/14/81,9/18/96,Assassination,,
-Nerva,30,Elected By Senate,9/18/96,1/27/98,Natural Causes,,
-Trajan,53,Adoptive Inheritance,1/28/98,8/7/117,Natural Causes,,
-Hadrian,76,Adoptive Inheritance,8/11/117,7/10/138,Natural Causes,,
-Antoninus Pius,86,Adoptive Inheritance,7/10/138,3/7/161,Natural Causes,,
-Marcus Aurelius,121,Adoptive Inheritance,3/7/161,3/17/180,Natural Causes,,
-Lucius Verus,130,Adoptive Inheritance,3/7/161,3/1/169,Natural Causes,,
-Commodus,161,Inheritance,1/1/177,12/31/192,Assassination,,
-Pertinax,126,Hailed By Praetorian Guard,1/1/193,3/28/193,Praetorian Guard,,
-Didius Julianus,133,Hailed By Praetorian Guard,3/28/193,6/1/193,Executed,,
-Septimius Severus,145,Seized Power,4/9/193,2/4/211,Natural Causes,,
-Caracalla,188,Inheritance,1/1/198,4/8/217,Assassination,,
-Geta,189,Inheritance,1/1/209,12/26/211,Executed,,
-Macrinus,165,Hailed By Praetorian Guard,4/11/217,6/8/218,Executed,,
-Elagabalus,203,Hailed By Legions,6/8/218,3/11/222,Praetorian Guard,,
-Severus Alexander,208,Adoptive Inheritance,3/13/222,3/18/235,Assassination,,
-Maximinus I,173,Hailed By Legions,3/20/235,6/1/238,Praetorian Guard,,
-Gordian I,159,Hailed By Legions,3/22/238,4/12/238,Suicide,,
-Gordian II,192,Hailed By Legions,3/22/238,4/12/238,Death in Battle,,
-Pupienus,178,Elected By Senate,4/22/238,7/29/238,Praetorian Guard,,
-Balbinus,165,Elected By Senate,4/22/238,7/29/238,Praetorian Guard,,
-Gordian III,225,Elected By Senate,4/22/238,2/11/244,Assassination,,
-Philip,204,Hailed By Praetorian Guard,2/1/244,9/1/249,Death in Battle,,
-Trajan Decius,201,Hailed By Legions,9/1/249,6/1/251,Death in Battle,,
-Hostilian,230,Inheritance,6/1/251,12/1/251,Natural Causes,,
-Trebonianus Gallus,206,Hailed By Legions,6/1/251,8/1/253,Assassination,,
-Aemilian,207,Hailed By Legions,8/1/253,10/1/253,Assassination,,
-Valerian,195,Hailed By Legions,10/1/253,1/1/260,Captured,,
-Gallienus,218,Inheritance,10/1/253,9/1/268,Assassination,,
-Claudius Gothicus,213,Hailed By Legions,9/1/268,1/1/270,Natural Causes,,
-Quintillus,220,Hailed By Legions,1/1/270,12/1/270,Suicide,,
-Aurelian,214,Hailed By Legions,9/1/270,9/1/275,Praetorian Guard,,
-Tacitus,200,Elected By Senate,9/25/275,6/1/276,Natural Causes,,
-Florian,,Hailed By Legions,6/1/276,9/1/276,Assassination,,
-Probus,232,Hailed By Legions,9/1/276,9/1/282,Assassination,,
-Carus,230,Hailed By Praetorian Guard,9/1/282,8/1/283,Natural Causes,,
-Numerian,,Inheritance,8/1/283,12/1/284,Assassination,,
-Carinus,,Inheritance,8/1/283,12/1/285,Death in Battle,,
-Diocletian,244,Hailed By Legions,11/20/284,5/1/305,Abdication,,
-Maximian,250,Adoptive Inheritance,4/1/286,5/1/305,Abdication,,
-Constantius I,250,Adoptive Inheritance,5/1/305,7/25/306,Natural Causes,,
-Galerius,260,Adoptive Inheritance,5/1/305,5/1/311,Natural Causes,,
-Severus II,,Adoptive Inheritance,6/1/306,3/1/307,Executed,,
-Constantine I,272,Hailed By Legions,7/25/306,5/22/337,Natural Causes,,
-Maxentius,278,Hailed By Praetorian Guard,10/28/306,10/28/312,Death in Battle,,
-Maximinus II,270,Adoptive Inheritance,5/1/311,7/1/313,Suicide,,
-Licinius I,250,Adoptive Inheritance,11/11/308,9/18/324,Executed,,
-Constantine II,316,Inheritance,5/22/337,12/1/340,Death in Battle,,
-Constantius II,317,Inheritance,5/22/337,11/3/361,Natural Causes,,
-Constans I,320,Inheritance,5/22/337,12/1/350,Assassination,,
-Vetranio,,Appointed,3/1/350,12/25/350,Abdication,,
-Julian,331,Appointed,2/1/360,6/26/363,Death in Battle,,
-Jovian,331,Hailed By Legions,6/26/363,2/17/364,Natural Causes,,
-Valentinian I,321,Hailed By Legions,2/26/364,11/17/375,Natural Causes,,
-Valens,328,Appointed,3/28/364,8/9/378,Death in Battle,,
-Gratian,359,Inheritance,8/4/367,8/25/383,Assassination,,
-Valentinian II,371,Inheritance,11/17/375,5/15/392,Assassination,,
-Theodosius I,347,Appointed,1/1/379,1/17/395,Natural Causes,,
-Arcadius,377,Inheritance,1/1/383,5/1/408,Natural Causes,,
-Magnus Maximus,335,Hailed By Legions,1/1/383,8/28/388,Executed,,
-Honorius,384,Inheritance,1/23/393,8/15/423,Natural Causes,,
-Theodosius II,401,Inheritance,1/1/402,7/28/450,Natural Causes,,
-Constantine III,,Hailed By Legions,1/1/407,8/1/411,Executed,,
-Constantius III,,Appointed,2/8/421,9/2/421,Natural Causes,,
-Joannes,,Appointed,8/27/423,5/1/425,Death in Battle,,
-Valentinian III,419,Inheritance / Appointed,10/23/424,3/16/455,Assassination,,
-Marcian,396,Marriage,6/1/450,1/1/457,Natural Causes,,
-Petronius Maximus,396,Hailed By Legions,3/17/455,5/31/455,Killed By Mob,,
-Avitus,385,Appointed,7/9/455,10/17/456,Deposed,,
-Majorian,420,Appointed,4/1/457,8/2/461,Executed,,
-Libius Severus,420,Appointed,11/1/461,8/1/465,Assassination,,
-Anthemius,420,Appointed,4/12/467,7/11/472,Executed,,
-Olybrius,420,Appointed,7/11/472,11/2/472,Natural Causes,,
-Glycerius,420,Appointed,3/1/473,6/1/474,Deposed,,
-Julius Nepos,430,Appointed,6/1/474,4/1/480,Assassination,,
-Romulus Augustulus,460,Appointed,10/31/475,9/4/476,Deposed,,
+Name,BirthYear,BeginType,BeganYear,EndYear,EndType,YearCountEndType
+Augustus,-63,Seized Power,1/16/-27,8/19/14,Natural Causes,natural
+Tiberius,-42,Adoptive Inheritance,9/18/14,3/16/37,Natural Causes,natural
+Caligula,12,Adoptive Inheritance,3/18/37,1/24/41,Assassination,assassination
+Claudius,-10,Hailed By Praetorian Guard,1/25/41,10/13/54,Assassination,assassination
+Nero,37,Adoptive Inheritance,10/13/54,6/9/68,Suicide,suicide
+Galba,-3,Seized Power,6/8/68,1/15/69,Praetorian Guard,praetorian
+Otho,32,Hailed By Praetorian Guard,1/15/69,4/16/69,Suicide,suicide
+Vitellius,15,Seized Power,4/17/69,12/20/69,Executed,executed
+Vespasian,9,Seized Power,12/21/69,6/24/79,Natural Causes,natural
+Titus,39,Inheritance,6/24/79,9/13/81,Natural Causes,natural
+Domitian,51,Inheritance,9/14/81,9/18/96,Assassination,assassination
+Nerva,30,Elected By Senate,9/18/96,1/27/98,Natural Causes,natural
+Trajan,53,Adoptive Inheritance,1/28/98,8/7/117,Natural Causes,natural
+Hadrian,76,Adoptive Inheritance,8/11/117,7/10/138,Natural Causes,natural
+Antoninus Pius,86,Adoptive Inheritance,7/10/138,3/7/161,Natural Causes,natural
+Marcus Aurelius,121,Adoptive Inheritance,3/7/161,3/17/180,Natural Causes,natural
+Lucius Verus,130,Adoptive Inheritance,3/7/161,3/1/169,Natural Causes,natural
+Commodus,161,Inheritance,1/1/177,12/31/192,Assassination,assassination
+Pertinax,126,Hailed By Praetorian Guard,1/1/193,3/28/193,Praetorian Guard,praetorian
+Didius Julianus,133,Hailed By Praetorian Guard,3/28/193,6/1/193,Executed,executed
+Septimius Severus,145,Seized Power,4/9/193,2/4/211,Natural Causes,natural
+Caracalla,188,Inheritance,1/1/198,4/8/217,Assassination,assassination
+Geta,189,Inheritance,1/1/209,12/26/211,Executed,executed
+Macrinus,165,Hailed By Praetorian Guard,4/11/217,6/8/218,Executed,executed
+Elagabalus,203,Hailed By Legions,6/8/218,3/11/222,Praetorian Guard,praetorian
+Severus Alexander,208,Adoptive Inheritance,3/13/222,3/18/235,Assassination,assassination
+Maximinus I,173,Hailed By Legions,3/20/235,6/1/238,Praetorian Guard,praetorian
+Gordian I,159,Hailed By Legions,3/22/238,4/12/238,Suicide,suicide
+Gordian II,192,Hailed By Legions,3/22/238,4/12/238,Death in Battle,battle
+Pupienus,178,Elected By Senate,4/22/238,7/29/238,Praetorian Guard,praetorian
+Balbinus,165,Elected By Senate,4/22/238,7/29/238,Praetorian Guard,praetorian
+Gordian III,225,Elected By Senate,4/22/238,2/11/244,Assassination,assassination
+Philip,204,Hailed By Praetorian Guard,2/1/244,9/1/249,Death in Battle,battle
+Trajan Decius,201,Hailed By Legions,9/1/249,6/1/251,Death in Battle,battle
+Hostilian,230,Inheritance,6/1/251,12/1/251,Natural Causes,natural
+Trebonianus Gallus,206,Hailed By Legions,6/1/251,8/1/253,Assassination,assassination
+Aemilian,207,Hailed By Legions,8/1/253,10/1/253,Assassination,assassination
+Valerian,195,Hailed By Legions,10/1/253,1/1/260,Captured,captured
+Gallienus,218,Inheritance,10/1/253,9/1/268,Assassination,assassination
+Claudius Gothicus,213,Hailed By Legions,9/1/268,1/1/270,Natural Causes,natural
+Quintillus,220,Hailed By Legions,1/1/270,12/1/270,Suicide,suicide
+Aurelian,214,Hailed By Legions,9/1/270,9/1/275,Praetorian Guard,praetorian
+Tacitus,200,Elected By Senate,9/25/275,6/1/276,Natural Causes,natural
+Florian,,Hailed By Legions,6/1/276,9/1/276,Assassination,assassination
+Probus,232,Hailed By Legions,9/1/276,9/1/282,Assassination,assassination
+Carus,230,Hailed By Praetorian Guard,9/1/282,8/1/283,Natural Causes,natural
+Numerian,,Inheritance,8/1/283,12/1/284,Assassination,assassination
+Carinus,,Inheritance,8/1/283,12/1/285,Death in Battle,battle
+Diocletian,244,Hailed By Legions,11/20/284,5/1/305,Abdication,abdication
+Maximian,250,Adoptive Inheritance,4/1/286,5/1/305,Abdication,abdication
+Constantius I,250,Adoptive Inheritance,5/1/305,7/25/306,Natural Causes,natural
+Galerius,260,Adoptive Inheritance,5/1/305,5/1/311,Natural Causes,natural
+Severus II,,Adoptive Inheritance,6/1/306,3/1/307,Executed,executed
+Constantine I,272,Hailed By Legions,7/25/306,5/22/337,Natural Causes,natural
+Maxentius,278,Hailed By Praetorian Guard,10/28/306,10/28/312,Death in Battle,battle
+Maximinus II,270,Adoptive Inheritance,5/1/311,7/1/313,Suicide,suicide
+Licinius I,250,Adoptive Inheritance,11/11/308,9/18/324,Executed,executed
+Constantine II,316,Inheritance,5/22/337,12/1/340,Death in Battle,battle
+Constantius II,317,Inheritance,5/22/337,11/3/361,Natural Causes,natural
+Constans I,320,Inheritance,5/22/337,12/1/350,Assassination,assassination
+Vetranio,,Appointed,3/1/350,12/25/350,Abdication,abdication
+Julian,331,Appointed,2/1/360,6/26/363,Death in Battle,battle
+Jovian,331,Hailed By Legions,6/26/363,2/17/364,Natural Causes,natural
+Valentinian I,321,Hailed By Legions,2/26/364,11/17/375,Natural Causes,natural
+Valens,328,Appointed,3/28/364,8/9/378,Death in Battle,battle
+Gratian,359,Inheritance,8/4/367,8/25/383,Assassination,assassination
+Valentinian II,371,Inheritance,11/17/375,5/15/392,Assassination,assassination
+Theodosius I,347,Appointed,1/1/379,1/17/395,Natural Causes,natural
+Arcadius,377,Inheritance,1/1/383,5/1/408,Natural Causes,natural
+Magnus Maximus,335,Hailed By Legions,1/1/383,8/28/388,Executed,executed
+Honorius,384,Inheritance,1/23/393,8/15/423,Natural Causes,natural
+Theodosius II,401,Inheritance,1/1/402,7/28/450,Natural Causes,natural
+Constantine III,,Hailed By Legions,1/1/407,8/1/411,Executed,executed
+Constantius III,,Appointed,2/8/421,9/2/421,Natural Causes,natural
+Joannes,,Appointed,8/27/423,5/1/425,Death in Battle,battle
+Valentinian III,419,Inheritance / Appointed,10/23/424,3/16/455,Assassination,assassination
+Marcian,396,Marriage,6/1/450,1/1/457,Natural Causes,natural
+Petronius Maximus,396,Hailed By Legions,3/17/455,5/31/455,Killed By Mob,mob
+Avitus,385,Appointed,7/9/455,10/17/456,Deposed,deposed
+Majorian,420,Appointed,4/1/457,8/2/461,Executed,executed
+Libius Severus,420,Appointed,11/1/461,8/1/465,Assassination,assassination
+Anthemius,420,Appointed,4/12/467,7/11/472,Executed,executed
+Olybrius,420,Appointed,7/11/472,11/2/472,Natural Causes,natural
+Glycerius,420,Appointed,3/1/473,6/1/474,Deposed,deposed
+Julius Nepos,430,Appointed,6/1/474,4/1/480,Assassination,assassination
+Romulus Augustulus,460,Appointed,10/31/475,9/4/476,Deposed,deposed
