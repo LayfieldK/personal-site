@@ -6,10 +6,10 @@
     </h2>
     <% if action_name != 'show' %>
         <article>
-         <%= blogpost.body.html_safe %>
+         <%= markdown(blogpost.body) %>
         </article>
     <% else %>
-        <%= blogpost.body.html_safe %>
+        <%= markdown(blogpost.body) %>
     <% end %>
 
     <hr>
