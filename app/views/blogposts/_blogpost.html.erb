@@ -6,11 +6,12 @@
     </h2>
     <% if action_name != 'show' %>
         <article>
-         <%= markdown(blogpost.body) %>
+         <%= blogpost.body.html_safe %>
         </article>
     <% else %>
-        <%= markdown(blogpost.body) %>
+        <%= blogpost.body.html_safe %>
     <% end %>
+
     <hr>
     Tags: <%= raw tag_links(blogpost.all_tags) %>
     <hr>

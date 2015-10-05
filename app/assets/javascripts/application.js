@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require d3
+//= require d3-zoom-pan-extent
 //= require bootstrap
 //= require turbolinks
 //= require readmore

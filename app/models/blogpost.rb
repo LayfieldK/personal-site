@@ -14,6 +14,6 @@ class Blogpost < ActiveRecord::Base
   end
   
   def self.tagged_with(name)
-    Tag.find_by_name!(name).blogposts
+    Tag.find_by_name!(name).blogposts 
   end
 end
