@@ -17,8 +17,8 @@ class StaticPagesController < ApplicationController
     
   end
   
-  def data_visualization
-    
+  def roman_emperors_d3
+    render :layout => false
   end
   
   def data_visualization2

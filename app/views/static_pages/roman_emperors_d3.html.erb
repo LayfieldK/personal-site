@@ -1,25 +1,35 @@
-<div class="row">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kevin Layfield</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta charset="UTF-8">
+  <meta content="utf-8" http-equiv="encoding">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+      
+  <div class="container">
+    
+    
+    
+    <div class="row">
           <div  class="box">
               <div class="col-lg-12 text-center">
               	<div class="col-lg-12 text-center">
 
-After reading Mike Bostock's AMA on the Data is Beautiful subreddit, I had become interested in trying my hand at some data visualization using d3.js.  After a few nights of hard thinking on <i>what I could actually visualize,</i> I decided to chart some information about the reigns of the Roman Emperors.  All of my information was extracted from Wikipedia, and some of the data was interpreted subjectively, so the following charts can't be taken as 100% fact.
 
-I've added a few features to the scatterplot to make it a bit more fun.  First, you can pan and zoom the chart.  This helps to distinguish between Emperors in cases where many of them died around the same time.  For example on the first chart below, you'll see three emperors die in the year 69 AD.  Another feature I added is a mouseover tooltip for each data point.  Depending on which chart you look at, the tooltip will reveal different information.  I also made it possible to turn on and off different series of data by clicking on the colored squares in the legend for each chart.
-
-<div id="RomanEmperorScatterplot"></div>
-
-The first chart I created shows the years of the ends of each emperor's reign vs the number of years in their reign in a scatterplot.  With just those two pieces of information being plotted, there isn't much to be learned.  Therefore, I also color-coded the method of their removal from office - illustrating the method in which they were removed from office.  This reveals some much more interesting data.  For instance, one will notice that when an emperor reaches about twenty years in his reign, his chances of dying by natural causes go way up.  There are two reasons I can see for this.  First, If you're an emperor in your twentieth year, chances are that you're so old that you're on death's door.  Second, if you were an emperor likely to anger the legions, the praetorian guard, the senate, or any other would-be assassin, you would have probably been dealt with way before the twenty year marker.  Another aspect of the this chart that I really enjoy is the time on the graph between 200 AD and 300 AD.  There's a reason why they call it the "Crisis of the Third Century," and this scatterplot helps to show why.  So many emperors died in such a short timeframe, and hardly any of them were due to natural causes.  Rather, we see the Praetorian Guard, assassins, and Roman generals murdering the emperors.  That's not to say that the Empire didn't face external threat during the crisis, if you'll notice, Emperor Valerian was captured by the Sassanids during the crisis, never to be heard from again.
-
-<div id="RomanEmperorAgeVsReign"></div >
-
-This chart works very similarly to the first chart, but it plots different data.  It compares the age of an Emperor upon his ascension to the number of years that his reign lasted.  This chart also has color coded data points, this time showcasing the method in which they ascended to Augustus.  I'm not sure that this chart is useful in discerning information, but there are a few points of note.  First, blood adoption is clearly the best way to become Emperor at a young age.  Second, most of the "Five Good Emperors" are quite easy to spot on the chart.  The Five Good Emperors all adopted their heirs consecutively and brought about a Roman golden age.  It ended when Marcus Aurelius had a natural born son named Commodus, and he kicked off the decline and fall of the Roman Empire.  Anyway, you can spot most of the five good emperors on the chart because they are all adoptive heirs and they have great staying power after ascending to the purple.
-
-I'm sure much of this data could be better analyzed by using some hard numbers and math, but I thought it would be interesting to see the data visually.  I really enjoy using d3.js.  It took a bit to finally understand how it all works, but luckily there are tons of useful examples out there.  I'd love to explore some of the more complex chart types that d3.js is capable of creating, but this was a nice starting project.
-</div >          
+                  <div id="RomanEmperorScatterplot" class="d3chart"></div>
+                  
+                  <div id="RomanEmperorAgeVsReign" class="d3chart"></div >
+                </div >          
 
 <style>
-
+.d3chart{
+  padding-bottom:50px;
+}
 #RomanEmperorScatterplot svg {
 	font-family:'Trade Gothic Next W01',sans-serif;
 	/*background:rgba(255,255,255,0.3);
@@ -674,9 +684,16 @@ I'm sure much of this data could be better analyzed by using some hard numbers a
 
 });
                   </script>
-    <hr>
-    Tags: <a href="/tags/web-development">web-development</a>, <a href="/tags/programming">programming</a>, <a href="/tags/rome">rome</a>, <a href="/tags/d3.js">d3.js</a>, <a href="/tags/data%20visualization">data visualization</a>
-    <hr>
+   
+        </div>
+    	</div>
 </div>
-              	</div>
-          </div>
+
+  </div>
+  
+  
+  
+    
+  
+</body>
+</html>

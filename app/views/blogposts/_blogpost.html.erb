@@ -1,3 +1,4 @@
+<div class="blogpost"></div>
 <div class="col-lg-12 ">
 
     <h2 class="text-center"><%= blogpost.title %>
@@ -11,12 +12,12 @@
     <% else %>
         <%= markdown(blogpost.body) %>
     <% end %>
-
+    <%= blogpost.tags_without_markdown.html_safe %>
     <hr>
     Tags: <%= raw tag_links(blogpost.all_tags) %>
     <hr>
 </div>
-
+</div>
 <% if logged_in? %>
   <%= link_to 'Edit', edit_blogpost_path(blogpost) %> |
   <%= link_to 'Back', blogposts_path %>
