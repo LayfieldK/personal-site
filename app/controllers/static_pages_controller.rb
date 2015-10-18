@@ -21,8 +21,8 @@ class StaticPagesController < ApplicationController
     render :layout => false
   end
   
-  def data_visualization2
-    
+  def star_wars_crawl
+    render :layout => false
   end
   
   protected

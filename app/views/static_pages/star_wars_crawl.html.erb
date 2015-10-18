@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <title>Kevin Layfield - Star Wars Text Crawl</title>
+        
+        <style>
+            ::-webkit-scrollbar { 
+                display: none; 
+            }
+            body {
+				height:1200px;
+                background: #000;
+                color: rgba(229,177,58,1);
+                font-weight: bold;
+                font-size: 38px;
+                font-family: 'Franklin Gothic Medium', 'Franklin Gothic', 'ITC Franklin Gothic', Arial, sans-serif;
+                text-align: justify;
+                -webkit-user-select: none;
+                -moz-user-select: moz-none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-perspective: 265px;
+                -ms-perspective: 265px;
+                perspective: 265px;
+                overflow-y: hidden;
+                margin: 0;
+            }
+            h1 {
+                font-size: 55px;
+                font-weight: normal;
+                text-transform: uppercase;
+            }
+            h1, h2 {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            #crawl-container {
+                margin: 0 auto;
+                width: 50%;
+                height: 250%;
+                overflow-y: scroll;
+                box-sizing: border-box;
+                -webkit-transform: rotateX(20deg) scale(0.25);
+                -ms-transform: rotateX(20deg) scale(0.25);
+                transform: rotateX(20deg) scale(0.25);
+                -webkit-transform-origin: top center;
+                -ms-transform-origin: top center;
+                transform-origin: top center;
+            }
+            #crawl {
+
+                padding: 2625px 0px;
+            }
+
+        </style>
+    </head>
+    <body>
+<div id="crawl-container">
+<div id="crawl">
+<h2>Episode I</h2><h1>The Phantom Menace</h1>
+Turmoil has engulfed the Galactic Republic. The taxation of trade routes to outlying star systems is in dispute.
+Hoping to resolve the matter with a blockade of deadly battleships, the greedy Trade Federation has stopped all shipping to the small planet of Naboo.
+While the Congress of the Republic endlessly debates this alarming chain of events, the Supreme Chancellor has secretly dispatched two Jedi Knights, the guardians of peace and justice in the galaxy, to settle the conflict....
+<h2>Episode II</h2><h1>Attack of the Clones</h1>
+"There is unrest in the Galactic Senate. Several thousand solar systems have declared their intentions to leave the Republic.
+This separatist movement, under the leadership of the mysterious Count Dooku, has made it difficult for the limited number of Jedi Knights to maintain peace and order in the galaxy.
+Senator Amidala, the former Queen of Naboo, is returning to the Galactic Senate to vote on the critical issue of creating an ARMY OF THE REPUBLIC to assist the overwhelmed Jedi....
+<h2>Episode III</h2><h1>Revenge of the Sith</h1>
+War! The Republic is crumbling under attacks by the ruthless Sith Lord, Count Dooku. There are heroes on both sides. Evil is everywhere.
+In a stunning move, the fiendish droid leader, General Grievous, has swept into the Republic capital and kidnapped Chancellor Palpatine, leader of the Galactic Senate.
+As the Separatist Droid Army attempts to flee the besieged capital with their valuable hostage, two Jedi Knights lead a desperate mission to rescue the captive Chancellor....
+<h2>Episode IV</h2><h1>A New Hope</h1>
+It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.
+During the battle, rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.
+Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy....
+<h2>Episode V</h2><h1>The Empire Strikes Back</h1>
+It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.
+Evading the dreaded Imperial Starfleet, a group of freedom fighters led by Luke Skywalker has established a new secret base on the remote ice world of Hoth.
+The evil lord Darth Vader, obsessed with finding young Skywalker, has dispatched thousands of remote probes into the far reaches of space...
+<h2>Episode VI</h2><h1>Return of the Jedi</h1>
+Luke Skywalker has returned to his home planet of Tatooine in an attempt to rescue his friend Han Solo from the clutches of the vile gangster Jabba the Hutt.
+Little does Luke know that the GALACTIC EMPIRE has secretly begun construction on a new armored space station even more powerful than the first dreaded Death Star.
+When completed, this ultimate weapon will spell certain doom for the small band of rebels struggling to restore freedom to the galaxy....
+</div>
+</div>
+        <script>
+var mouseX = 0,
+    mouseY = 0;
+$scroll = $("#crawl-container");
+
+window.setInterval(function(){
+    $scroll.scrollTop($scroll.scrollTop() + 1);
+}, 45);
+
+for(var i = 0; i < 1600; i++){
+    var star = document.createElement("div");
+    star.style.backgroundColor = "rgba(255,255,255,1)";
+    var size = (Math.random() * 2) % 2;
+    star.style.width = size + "px";
+    star.style.height = size + "px";
+    star.style.position = "fixed";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.left = Math.random() * 100 + "%";
+    $("body").append(star);
+}
+        </script>
+    </body>
+</html>
