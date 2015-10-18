@@ -12,7 +12,7 @@
     <% else %>
         <%= markdown(blogpost.body) %>
     <% end %>
-    <%= blogpost.tags_without_markdown.html_safe %>
+    
     <hr>
     Tags: <%= raw tag_links(blogpost.all_tags) %>
     <hr>
