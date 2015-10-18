@@ -25,6 +25,10 @@ class StaticPagesController < ApplicationController
     render :layout => false
   end
   
+  def star_wars_crawl1
+    render :layout => false
+  end
+  
   protected
   
     def authenticate

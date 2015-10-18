@@ -7,8 +7,9 @@
             ::-webkit-scrollbar { 
                 display: none; 
             }
-            body {
-				height: 1200px;
+            #zone {
+				height:400px;
+				width:800px;
                 background: #000;
                 color: rgba(229,177,58,1);
                 font-weight: bold;
@@ -19,9 +20,9 @@
                 -moz-user-select: moz-none;
                 -ms-user-select: none;
                 user-select: none;
-                -webkit-perspective: 265px;
-                -ms-perspective: 265px;
-                perspective: 265px;
+                -webkit-perspective: 150px;
+                -ms-perspective: 150px;
+                perspective: 130px;
                 overflow-y: hidden;
                 margin: 0;
             }
@@ -36,25 +37,26 @@
             }
             #crawl-container {
                 margin: 0 auto;
-                width: 50%;
-                height: 250%;
+                width: 80%;
+                height: 300%;
                 overflow-y: scroll;
                 box-sizing: border-box;
-                -webkit-transform: rotateX(20deg) scale(0.25);
-                -ms-transform: rotateX(20deg) scale(0.25);
-                transform: rotateX(20deg) scale(0.25);
+                -webkit-transform: rotateX(22deg) scale(0.3);
+                -ms-transform: rotateX(22deg) scale(0.3);
+                transform: rotateX(22deg) scale(0.3);
                 -webkit-transform-origin: top center;
                 -ms-transform-origin: top center;
                 transform-origin: top center;
             }
             #crawl {
 
-                padding: 2600px 0px;
+                padding: 900px 0px;
             }
 
         </style>
     </head>
     <body>
+<div id="zone">
 <div id="crawl-container">
 <div id="crawl">
 <h2>Episode I</h2><h1>The Phantom Menace</h1>
@@ -83,12 +85,11 @@ Little does Luke know that the GALACTIC EMPIRE has secretly begun construction o
 When completed, this ultimate weapon will spell certain doom for the small band of rebels struggling to restore freedom to the galaxy....
 </div>
 </div>
+</div>
         <script>
 var mouseX = 0,
     mouseY = 0;
 $scroll = $("#crawl-container");
-
-
 
 
 
@@ -105,7 +106,7 @@ for(var i = 0; i < 1600; i++){
     star.style.position = "fixed";
     star.style.top = Math.random() * 100 + "%";
     star.style.left = Math.random() * 100 + "%";
-    $("body").append(star);
+    $("#zone").append(star);
 }
         </script>
     </body>

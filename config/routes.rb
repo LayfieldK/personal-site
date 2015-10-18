@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'projects' =>   'static_pages#projects'
   get 'roman_emperors_d3' =>  'static_pages#roman_emperors_d3'
   get 'star_wars_crawl' =>  'static_pages#star_wars_crawl'
+  get 'star_wars_crawl1' =>  'static_pages#star_wars_crawl1'
   get 'tags/:tag', to: 'blogposts#index', as: "tag"
 
   resources :blogposts
