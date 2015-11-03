@@ -21,6 +21,10 @@ class StaticPagesController < ApplicationController
     render :layout => false
   end
   
+  def yankees_98
+    render :layout => false
+  end
+  
   def star_wars_crawl
     render :layout => false
   end
