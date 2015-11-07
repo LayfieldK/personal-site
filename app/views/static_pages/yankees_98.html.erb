@@ -40,7 +40,8 @@
 
 var format = d3.time.format("%Y-%m-%d");
 
-var endDate = new Date('4/1/1998');
+
+
 
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
@@ -69,9 +70,21 @@ var svg = d3.select("body").append("svg")
 
 d3.csv("Yankees98RunningTotal - H - AB.csv", function(error, allData) {
   if (error) throw error;
+  
+  var dates = [];
+    for(var i = 0; i < allData.length; i++) {
+        if(!dates.contains(allData[i].date)) {
+            dates.push(allData[i].date);
+        }
+    }
+    
+    console.log(dates.length);
+  
+  var dateIndex = 0;  
+  var endDate = format.parse(dates[dateIndex]);
+  
 
-  data = allData.filter(function(d){ return format.parse(d.date).getTime() == endDate.getTime(); });
-  console.log(data.length);
+  
   x.domain(allData.map(function(d) { return d.name; }));
   y.domain([0, 1]);
 
@@ -89,16 +102,42 @@ d3.csv("Yankees98RunningTotal - H - AB.csv", function(error, allData) {
       .attr("dy", ".71em")
       .style("text-anchor", "end")
       .text("Batting Average");
+      
+  update();
 
-  svg.selectAll(".bar")
-      .data(data)
-    .enter().append("rect")
-      .attr("class", "bar")
-      .attr("x", function(d) { return x(d.name); })
-      .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.running_total_h / d.running_total_ab); })
-      .attr("height", function(d) { return height - y(d.running_total_h / d.running_total_ab); });
+  function update(){
+    data = allData.filter(function(d){ return format.parse(d.date).getTime() == endDate.getTime(); });
+    svg.selectAll(".bar")
+        .data(data,key)
+        .attr("width", x.rangeBand())
+        .attr("y", function(d) { return y(d.running_total_h / d.running_total_ab); })
+        .attr("height", function(d) { return height - y(d.running_total_h / d.running_total_ab); })
+      .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", function(d) { return x(d.name); })
+        .attr("width", x.rangeBand())
+        .attr("y", function(d) { return y(d.running_total_h / d.running_total_ab); })
+        .attr("height", function(d) { return height - y(d.running_total_h / d.running_total_ab); });
+  };
+  var key = function( d) { return d.player_id; };
+
+      
+  setInterval(function(){
+      dateIndex++;
+      endDate = format.parse(dates[dateIndex]);
+      console.log(endDate);
+      update();
+}, 500);
 });
+
+
+
+Array.prototype.contains = function(v) {
+    for(var i = 0; i < this.length; i++) {
+        if(this[i] === v) return true;
+    }
+    return false;
+};
 
 
 
