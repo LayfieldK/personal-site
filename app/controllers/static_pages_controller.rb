@@ -33,6 +33,10 @@ class StaticPagesController < ApplicationController
     render :layout => false
   end
   
+  def eve_kills
+    render :layout=> false
+  end
+  
   protected
   
     def authenticate

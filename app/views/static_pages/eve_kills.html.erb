@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kevin Layfield - Eve StarMap Kills</title>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <meta charset="UTF-8">
+  <meta content="utf-8" http-equiv="encoding">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id ="tooltip" class ="hidden"> 
+  <p>
+    <strong>
+      At Bats: 
+    </strong>
+    <span id ="atbats">100</span>
+  </p>
+  <p>
+    <strong>
+      Hits: 
+    </strong>
+    <span id ="hits">100</span>
+  </p>
+  <p>
+    <strong>
+      As of: 
+    </strong>
+    <span id ="date">100</span>
+  </p>
+</div>
+
+<style>
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+
+#tooltip { 
+  position: absolute; 
+  width: 200px; 
+  height: auto; 
+  padding: 10px; 
+  background-color: white; 
+  -webkit-border-radius: 10px; 
+  -moz-border-radius: 10px; 
+  border-radius: 10px; 
+  -webkit-box-shadow: 4px 4px 10px rgba( 0, 0, 0, 0.4); 
+  -moz-box-shadow: 4px 4px 10px rgba( 0, 0, 0, 0.4); 
+  box-shadow: 4px 4px 10px rgba( 0, 0, 0, 0.4); 
+  pointer-events: none;
+} 
+
+#tooltip.hidden { 
+  display: none; 
+  
+} 
+
+#tooltip p { 
+  margin: 0; 
+  font-family: sans-serif; 
+  font-size: 16px; 
+  line-height: 20px;
+}
+
+</style>
+<div id="map_container"></div>
+<script>
+
+var margin = {top: 40, right: 40, bottom: 40, left: 40},
+    width = 800 - margin.left - margin.right,
+    height = 800 - margin.top - margin.bottom;
+
+var x = d3.scale.linear()
+    .range([0,width]);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
+    
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.json("EveStarMap.json", function(error, allData) {
+  if (error) throw error;
+  
+  var dates = [];
+    for(var i = 0; i < allData.length; i++) {
+        if(!dates.contains(allData[i].date)) {
+            dates.push(allData[i].date);
+        }
+    }
+
+  var dateIndex = 0;  
+  var endDate = format.parse(dates[dateIndex]);
+  
+
+  
+  x.domain(allData.map(function(d) { return d.name; }));
+  y.domain([0, 1]);
+  
+  svg.append("text")
+        .attr("class","date")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 3))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "16px") 
+        ;
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis.tickFormat(function(d) { return d * 1000 }))
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Batting Average");
+      
+  update();
+
+  function update(){
+    data = allData.filter(function(d){ return format.parse(d.date).getTime() == endDate.getTime(); });
+    
+        
+      svg.selectAll(".bar")
+        .data(data,key)  
+      .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", function(d) { return x(d.name); })
+        .attr("width", x.rangeBand())
+        .attr("y", function(d) { return y(0); })
+        .attr("height", function(d) { return height - y(0); })
+        .on("mouseover", function(d) {
+          
+          //console.log(Math.floor((d.running_total_h / d.running_total_ab) * 1000));
+					//Get this bar's x/y values, then augment for the tooltip
+					var xPosition = parseFloat(d3.select(this).attr("x")) + x.rangeBand() / 2;
+					var yPosition = parseFloat(d3.select(this).attr("y")) / 2 + height / 2;
+					//Update the tooltip position and value
+					d3.select("#tooltip")
+						.style("left", xPosition + "px")
+						.style("top", yPosition + "px")						
+						.select("#atbats")
+						.text(d.running_total_ab);
+					d3.select("#tooltip")
+					  .select("#hits")
+					  .text(d.running_total_h);
+				  d3.select("#tooltip")
+					  .select("#date")
+					  .text(d.date);
+			   
+					//Show the tooltip
+					d3.select("#tooltip").classed("hidden", false);
+			   })
+			   .on("mouseout", function() {
+			   
+					//Hide the tooltip
+					d3.select("#tooltip").classed("hidden", true);
+					
+			   });
+        
+      svg.selectAll("text.date")
+        .text((endDate.getUTCMonth()+1) +"/"+ endDate.getUTCDate() + "/" + endDate.getUTCFullYear());
+      
+      svg.selectAll("text.label")
+        .data(data,key)  
+        .enter()
+        .append("text")
+        .attr("class", "label")
+        .attr("x", function(d){
+          return x(d.name) + x.rangeBand() / 2;
+        })
+        .attr("y", function(d){
+          return y(d.running_total_h / d.running_total_ab) + 14;
+        })
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "12px")
+        .attr("fill", "white")
+        .attr("text-anchor", "middle");
+        
+        svg.selectAll(".bar")
+        .data(data,key)
+        .transition()
+        .duration(400)
+        .attr("width", x.rangeBand())
+        .attr("y", function(d) { return y(d.running_total_h / d.running_total_ab); })
+        .attr("height", function(d) { return height - y(d.running_total_h / d.running_total_ab); });
+        
+        svg.selectAll("text.label")
+          .data(data,key)
+          .transition()
+          .duration(400)
+          .text(function(d){
+            avg = Math.floor((d.running_total_h / d.running_total_ab) * 1000);
+            if (avg > 0){
+              return avg;
+            } else{
+              return "";
+            }
+          })
+          .attr("y", function(d){
+            return y(d.running_total_h / d.running_total_ab) + 14;
+          });
+  };
+  var key = function( d) { return d.player_id; };
+
+      
+  setInterval(function(){
+    if (dates.length-1 > dateIndex){
+      dateIndex++;
+      endDate = format.parse(dates[dateIndex]);
+      update();
+    }
+}, 500);
+});
+
+
+
+
+
+Array.prototype.contains = function(v) {
+    for(var i = 0; i < this.length; i++) {
+        if(this[i] === v) return true;
+    }
+    return false;
+};
+
+
+
+
+</script>
+
+</body>
+</html>
