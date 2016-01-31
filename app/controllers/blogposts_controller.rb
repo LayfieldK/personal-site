@@ -1,6 +1,6 @@
 class BlogpostsController < ApplicationController
   before_action :set_blogpost, only: [:show, :edit, :update, :destroy]
-  before_filter :logged_in?, except: [:show]
+  before_filter :authenticate, except: [:show]
 
 
 
@@ -74,8 +74,8 @@ class BlogpostsController < ApplicationController
   end
   
   protected
-
-    
+  
+   
 
   private
     # Use callbacks to share common setup or constraints between actions.
