@@ -1,6 +1,6 @@
 class BlogpostsController < ApplicationController
   before_action :set_blogpost, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate, except: [:show]
+  before_filter :authenticate, except: [:show, :index]
 
 
 
