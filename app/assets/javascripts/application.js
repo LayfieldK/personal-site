@@ -12,9 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+/*** Handle jQuery plugin naming conflict between jQuery UI and Bootstrap ***/
+$.widget.bridge('uibutton', $.ui.button);
+$.widget.bridge('uitooltip', $.ui.tooltip);
 //= require d3
 //= require d3-zoom-pan-extent
 //= require bootstrap
 //= require turbolinks
 //= require readmore
+$(document).ready(function(){
+    $('a').tooltip();
+});
 //= require_tree .

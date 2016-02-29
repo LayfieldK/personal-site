@@ -37,6 +37,10 @@ class StaticPagesController < ApplicationController
     render :layout=> false
   end
   
+  def hearthstone
+    
+  end
+  
   protected
   
     
