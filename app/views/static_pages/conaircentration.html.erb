@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kevin Layfield</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta charset="UTF-8">
+  <meta content="utf-8" http-equiv="encoding">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="bg">
+  <%= render 'layouts/header' %>
+  
+      
+  <div class="container">
+    
+    <% flash.each do |message_type, message| %>
+      <div class="row">
+        <div class="box flashwarningbox">
+          <div class="alert-<%= message_type %> text-center"><h2 class="flashwarningtext"><%= message %></h2></div>
+        </div>
+      </div>
+    <% end %>
+    
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
+  </div>
+  
+  
+
+    
+  </div>
+</body>
+</html>
