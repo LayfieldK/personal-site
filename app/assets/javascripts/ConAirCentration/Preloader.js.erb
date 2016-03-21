@@ -11,11 +11,10 @@ Concentration.Preloader = function (game) {
 Concentration.Preloader.prototype = {
 
 	preload: function () {
-
-		this.load.image('bg','/assets/ConAirCentration/explosions.jpg');
-		this.load.image('playButton', '/assets/ConAirCentration/play.png');
-		this.load.image('retryButton', '/assets/ConAirCentration/retry.png');
-		this.load.atlas('animals', '/assets/ConAirCentration/all.png', '/assets/ConAirCentration/all.json');
+		this.load.image('bg','<%= asset_path('ConAirCentration/explosions.jpg') %>');
+		this.load.image('playButton', '<%= asset_path('ConAirCentration/play.png') %>');
+		this.load.image('retryButton', '<%= asset_path('ConAirCentration/retry.png') %>');
+		this.load.atlas('animals', '<%= asset_path('ConAirCentration/all.png') %>', '<%= asset_path('ConAirCentration/all.json') %>');
 
 	},
 
