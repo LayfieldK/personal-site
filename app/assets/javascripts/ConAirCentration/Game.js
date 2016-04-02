@@ -52,6 +52,10 @@ Concentration.Game.prototype = {
         }
         this.tiles.x = this.game.width/2 - this.tiles.width/2 + (tileSize/2);
         this.tiles.y = this.game.height/2 - this.tiles.height/2 + (tileSize/2);
+        
+        this.correctSounds = [this.game.add.audio('correct1'),this.game.add.audio('correct2'),this.game.add.audio('correct3'),this.game.add.audio('correct4'),this.game.add.audio('correct5'),this.game.add.audio('correct6'),this.game.add.audio('correct7'),this.game.add.audio('correct8')];
+        this.themesong = this.game.add.audio('themesong');
+        this.themesong.play();
 	},
 
     onTileTap:function (tile) {
@@ -78,6 +82,7 @@ Concentration.Game.prototype = {
                 this.tiles.removeChild(this.prevTile);
                 this.tiles.removeChild(tile);
                 this.prevTile = null;
+                this.correctSounds[0].play();
                 if(this.tiles.children.length===0){
                     this.quitGame();
                 }
@@ -85,21 +90,15 @@ Concentration.Game.prototype = {
             this.busy = false;
         },this);
         t.start();
-
+        
     },
 
 	update: function () {
-
-		//	Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
 
 	},
 
 	quitGame: function (pointer) {
 
-		//	Here you should destroy anything you no longer need.
-		//	Stop music, delete sprites, purge caches, free resources, all that good stuff.
-
-		//	Then let's go back to the main menu.
 		this.state.start('MainMenu');
 
 	}

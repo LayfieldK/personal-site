@@ -2,7 +2,7 @@
 Concentration.Preloader = function (game) {
 
 	this.background = null;
-	this.preloadBar = null;
+
 
 	this.ready = false;
 
@@ -15,7 +15,15 @@ Concentration.Preloader.prototype = {
 		this.load.image('playButton', '<%= asset_path('ConAirCentration/play.png') %>');
 		this.load.image('retryButton', '<%= asset_path('ConAirCentration/retry.png') %>');
 		this.load.atlas('animals', '<%= asset_path('ConAirCentration/all.png') %>', '<%= asset_path('ConAirCentration/all.json') %>');
-
+		this.load.audio('correct1', '<%= asset_path('ConAirCentration/cameron.mp3') %>');
+		this.load.audio('themesong', '<%= asset_path('ConAirCentration/themesong.mp3') %>');
+		this.load.audio('correct2', '<%= asset_path('ConAirCentration/cyrus.mp3') %>');
+		this.load.audio('correct3', '<%= asset_path('ConAirCentration/cyrus2.mp3') %>');
+		this.load.audio('correct4', '<%= asset_path('ConAirCentration/Garland.mp3') %>');
+		this.load.audio('correct5', '<%= asset_path('ConAirCentration/Hillbilly-Gotcha.mp3') %>');
+		this.load.audio('correct6', '<%= asset_path('ConAirCentration/larkin.mp3') %>');
+		this.load.audio('correct7', '<%= asset_path('ConAirCentration/pinball.mp3') %>');
+		this.load.audio('correct8', '<%= asset_path('ConAirCentration/ugly.mp3') %>');
 	},
 
 	create: function () {
