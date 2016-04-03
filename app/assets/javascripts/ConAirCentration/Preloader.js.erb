@@ -3,7 +3,6 @@ Concentration.Preloader = function (game) {
 
 	this.background = null;
 
-
 	this.ready = false;
 
 };
@@ -11,8 +10,15 @@ Concentration.Preloader = function (game) {
 Concentration.Preloader.prototype = {
 
 	preload: function () {
+		
+		
+		this.preloadBar = this.add.sprite(this.game.width/2, this.game.height/2, 'playButton');
+		this.preloadBar.anchor.setTo(0.5);
+		this.load.setPreloadSprite(this.preloadBar);
+    
+
 		this.load.image('bg','<%= asset_path('ConAirCentration/explosions.jpg') %>');
-		this.load.image('playButton', '<%= asset_path('ConAirCentration/play.png') %>');
+
 		this.load.image('retryButton', '<%= asset_path('ConAirCentration/retry.png') %>');
 		this.load.atlas('characters', '<%= asset_path('ConAirCentration/all.png') %>', '<%= asset_path('ConAirCentration/all.json') %>');
 		this.load.audio('correct1', '<%= asset_path('ConAirCentration/cameron.mp3') %>');
@@ -40,3 +46,4 @@ Concentration.Preloader.prototype = {
 	}
 
 };
+
