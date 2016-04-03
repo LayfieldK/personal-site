@@ -8,7 +8,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
 	"sourceSize": {"w":150,"h":150}
 },
-"snake.png":
+"swampthing.png":
 {
 	"frame": {"x":0,"y":0,"w":150,"h":150},
 	"rotated": false,
@@ -16,7 +16,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
 	"sourceSize": {"w":150,"h":150}
 },
-"elephant.png":
+"sally.png":
 {
 	"frame": {"x":150,"y":0,"w":150,"h":150},
 	"rotated": false,
@@ -24,7 +24,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
 	"sourceSize": {"w":150,"h":150}
 },
-"giraffe.png":
+"qball.png":
 {
 	"frame": {"x":300,"y":0,"w":150,"h":150},
 	"rotated": false,
@@ -32,7 +32,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
 	"sourceSize": {"w":150,"h":150}
 },
-"hippo.png":
+"larkin.png":
 {
 	"frame": {"x":450,"y":0,"w":150,"h":150},
 	"rotated": false,
@@ -40,7 +40,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
 	"sourceSize": {"w":150,"h":150}
 },
-"monkey.png":
+"cyrus.png":
 {
 	"frame": {"x":600,"y":0,"w":150,"h":150},
 	"rotated": false,
@@ -48,7 +48,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
 	"sourceSize": {"w":150,"h":150}
 },
-"panda.png":
+"garland.png":
 {
 	"frame": {"x":0,"y":150,"w":150,"h":150},
 	"rotated": false,
@@ -56,7 +56,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
 	"sourceSize": {"w":150,"h":150}
 },
-"parrot.png":
+"diamond.png":
 {
 	"frame": {"x":150,"y":150,"w":150,"h":150},
 	"rotated": false,
@@ -64,7 +64,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
 	"sourceSize": {"w":150,"h":150}
 },
-"penguin.png":
+"billy.png":
 {
 	"frame": {"x":300,"y":150,"w":150,"h":150},
 	"rotated": false,
@@ -72,7 +72,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
 	"sourceSize": {"w":150,"h":150}
 },
-"pig.png":
+"cameron.png":
 {
 	"frame": {"x":450,"y":150,"w":150,"h":150},
 	"rotated": false,
@@ -80,7 +80,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
 	"sourceSize": {"w":150,"h":150}
 },
-"rabbit.png":
+"johnny.png":
 {
 	"frame": {"x":600,"y":150,"w":150,"h":150},
 	"rotated": false,

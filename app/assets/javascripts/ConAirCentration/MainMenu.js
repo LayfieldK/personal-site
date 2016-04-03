@@ -26,7 +26,7 @@ Concentration.MainMenu.prototype = {
 
 		//	And start the actual game
 		this.state.start('Game');
-
+		
 	}
 
 };

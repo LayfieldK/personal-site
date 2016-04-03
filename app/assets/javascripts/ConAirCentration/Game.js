@@ -37,17 +37,17 @@ Concentration.Game.prototype = {
 
         this.bg = this.game.add.sprite(0,0,'bg');
         this.tiles = this.game.add.group();
-        var animals = ["elephant","giraffe","hippo","monkey","panda","parrot","pig","rabbit","snake","penguin"];
-        animals = animals.concat(animals);
+        var characters = ["swampthing","sally","qball","larkin","cyrus","garland","diamond","billy","cameron","johnny"];
+        characters = characters.concat(characters);
         var tileSize = 170;
         var cols = 5;
         for (var i = 0; i < 20; i++) {
             var xx = (i%cols) * tileSize;
             var yy = Math.floor(i/cols) * tileSize;
-            var randomName = Phaser.ArrayUtils.removeRandomItem(animals);
-            var tile = new Tile(this.game,xx,yy,"animals",randomName+".png");
+            var randomName = Phaser.ArrayUtils.removeRandomItem(characters);
+            var tile = new Tile(this.game,xx,yy,"characters",randomName+".png");
             this.tiles.add(tile);
-            tile.animal = randomName;
+            tile.character = randomName;
             tile.onTap.add(this.onTileTap,this);
         }
         this.tiles.x = this.game.width/2 - this.tiles.width/2 + (tileSize/2);
@@ -55,7 +55,8 @@ Concentration.Game.prototype = {
         
         this.correctSounds = [this.game.add.audio('correct1'),this.game.add.audio('correct2'),this.game.add.audio('correct3'),this.game.add.audio('correct4'),this.game.add.audio('correct5'),this.game.add.audio('correct6'),this.game.add.audio('correct7'),this.game.add.audio('correct8')];
         this.themesong = this.game.add.audio('themesong');
-        this.themesong.play();
+        Concentration.music.stop();
+        this.themesong.play(null,19,.25);
 	},
 
     onTileTap:function (tile) {
@@ -72,19 +73,20 @@ Concentration.Game.prototype = {
             return;
         }
         t.add(1000,function () {
-            if(this.prevTile.animal !== tile.animal){
-                console.log("No match: ",this.prevTile.animal,tile.animal);
+            if(this.prevTile.character !== tile.character){
+                console.log("No match: ",this.prevTile.character,tile.character);
                 this.prevTile.hide();
                 tile.hide();
                 this.prevTile = null;
-            }else if(this.prevTile.animal === tile.animal){
-                console.log("Match: ",this.prevTile.animal,tile.animal);
+            }else if(this.prevTile.character === tile.character){
+                console.log("Match: ",this.prevTile.character,tile.character);
                 this.tiles.removeChild(this.prevTile);
                 this.tiles.removeChild(tile);
                 this.prevTile = null;
-                this.correctSounds[0].play();
                 if(this.tiles.children.length===0){
                     this.quitGame();
+                } else {
+                    Phaser.ArrayUtils.getRandomItem(this.correctSounds).play();
                 }
             }
             this.busy = false;
@@ -98,7 +100,8 @@ Concentration.Game.prototype = {
 	},
 
 	quitGame: function (pointer) {
-
+	    this.themesong.stop();
+        Concentration.music.play(null,13);
 		this.state.start('MainMenu');
 
 	}

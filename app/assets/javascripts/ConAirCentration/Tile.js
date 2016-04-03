@@ -1,7 +1,7 @@
 var Tile = (function () {
     var Tile = function (game,x,y,image,frame) {
         Phaser.Group.call(this,game);
-        this.animal = "";
+        this.character = "";
         this.hidden = true;
         this.onTap = new Phaser.Signal();
         this.x = x;

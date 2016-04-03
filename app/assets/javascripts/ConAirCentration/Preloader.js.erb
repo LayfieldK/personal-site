@@ -14,9 +14,10 @@ Concentration.Preloader.prototype = {
 		this.load.image('bg','<%= asset_path('ConAirCentration/explosions.jpg') %>');
 		this.load.image('playButton', '<%= asset_path('ConAirCentration/play.png') %>');
 		this.load.image('retryButton', '<%= asset_path('ConAirCentration/retry.png') %>');
-		this.load.atlas('animals', '<%= asset_path('ConAirCentration/all.png') %>', '<%= asset_path('ConAirCentration/all.json') %>');
+		this.load.atlas('characters', '<%= asset_path('ConAirCentration/all.png') %>', '<%= asset_path('ConAirCentration/all.json') %>');
 		this.load.audio('correct1', '<%= asset_path('ConAirCentration/cameron.mp3') %>');
 		this.load.audio('themesong', '<%= asset_path('ConAirCentration/themesong.mp3') %>');
+		this.load.audio('howdoi', '<%= asset_path('ConAirCentration/howdoi.mp3') %>');
 		this.load.audio('correct2', '<%= asset_path('ConAirCentration/cyrus.mp3') %>');
 		this.load.audio('correct3', '<%= asset_path('ConAirCentration/cyrus2.mp3') %>');
 		this.load.audio('correct4', '<%= asset_path('ConAirCentration/Garland.mp3') %>');
@@ -29,6 +30,7 @@ Concentration.Preloader.prototype = {
 	create: function () {
 
 		//	Once the load has finished we disable the crop because we're going to sit in the update loop for a short while as the music decodes
+		Concentration.music = this.game.add.audio('howdoi');
 		this.state.start("MainMenu");
 	},
 
