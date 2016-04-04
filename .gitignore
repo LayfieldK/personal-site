@@ -17,3 +17,5 @@
 /tmp
 
 /config/initializers/secrets.rb
+howdoi.mp3
+/app/assets/audio/ConAirCentration/themesong.mp3
